@@ -40,68 +40,77 @@
     <div class="am-cf admin-main">
         <!-- sidebar start -->
         <div class="J_menu admin-sidebar am-offcanvas" id="admin-offcanvas">
-            <div class="am-offcanvas-bar admin-offcanvas-bar"></div>
+            <div class="am-offcanvas-bar admin-offcanvas-bar">
+            </div>
         </div>
         <!-- sidebar end -->
         <!-- content start -->
         <div class="admin-content">
             <div class="am-cf am-padding">
-                <div class="am-fl am-cf"><strong class="am-text-lg">充值记录</strong></div>
+                <div class="am-fl am-cf"><strong class="am-text-lg">车辆管理</strong> / <strong class="am-text-lg">车主管理</strong> / <small class="am-text-primary">详情</small></div>
             </div>
             <div class="am-g">
                 <div class="am-u-md-12">
-                    <div class="am-btn-group am-btn-group-xs">
-                        <a href="javascript:history.go(-1)" class="am-btn am-btn-primary"><span class="am-icon-reply-all"></span> 返回</a>
-                    </div>
+                    <a href="javascript:history.go(-1)" class="am-btn am-btn-primary am-btn-sm"><span class="am-icon-reply-all"></span> 返回</a>
                 </div>
             </div>
             <hr>
             <div class="am-g">
-                <div class="am-u-sm-12">
-                    <table class="am-table am-table-striped am-table-hover table-main">
-                        <thead>
-                            <tr>
-                                <th>充值时间</th>
-                                <th>储值卡ID</th>
-                                <th>充值类型</th>
-                                <th>支付金额</th>
-                                <th>充值额度</th>
-                                <th>返现额度</th>
-                                <th>参与活动</th>
-                                <th>充值人</th>
-                                <th>电话</th>
-                                <th>车辆信息</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr data-id="1">
-                                <td class="table-datetime">2014-12-12 12:12:12</td>
-                                <td>E123456</td>
-                                <td>车主充值</td>
-                                <td>100元</td>
-                                <td>100</td>
-                                <td>10</td>
-                                <td>无</td>
-                                <td>孟星魂</td>
-                                <td>18691954193</td>
-                                <td>东风卡车 陕A123456</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="am-cf">
-                        共 15 条记录
-                        <div class="am-fr">
-                            <ul class="am-pagination">
-                                <li class="am-disabled"><a href="#">«</a></li>
-                                <li class="am-active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#">»</a></li>
+                <div class="am-u-sm-12 am-u-md-8">
+                    <ul class="e-siji">
+                        <li>
+                            <span>身份</span>
+                            <ul>
+                                <li>身份：车主</li>
                             </ul>
-                        </div>
-                    </div>
+                        </li>
+                        <li>
+                            <span>个人信息</span>
+                            <ul>
+                                <li>姓名：徐子陵</li>
+                                <li>电话：11111111111</li>
+                                <li>微信：qweasd</li>
+                                <li>QQ：123455</li>
+                                <li>收货地址：陕西省西安市雁塔区</li>
+                            </ul>
+                        </li>
+                        <li class="am-cf">
+                            <span>车辆信息</span>
+                            <ul class="am-fl">
+                                <li>车辆1</li>
+                                <li>车型：东风卡车</li>
+                                <li>车牌：陕A11111</li>
+                                <li>里程：1000km/h</li>
+                            </ul>
+                            <ul class="am-fl am-margin-left">
+                                <li>车辆2</li>
+                                <li>车型：东风卡车</li>
+                                <li>车牌：陕A11111</li>
+                                <li>里程：1000km/h</li>
+                            </ul>
+                        </li>
+                        <li class="am-cf">
+                            <span>司机信息</span>
+                            <ul class="am-fl">
+                                <li>司机1</li>
+                                <li>姓名：ACE</li>
+                                <li>电话：15958093225</li>
+                            </ul>
+                            <ul class="am-fl am-margin-left">
+                                <li>司机2</li>
+                                <li>姓名：ACE</li>
+                                <li>电话：15958093225</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>来源信息</span>
+                            <ul>
+                                <li>来源：加气站</li>
+                                <li>申请站点：龙首村加气站</li>
+                                <li>邀请人电话：18691954193</li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

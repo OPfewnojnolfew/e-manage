@@ -14,7 +14,6 @@
     <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
     <meta name="apple-mobile-web-app-title" content="Amaze UI" />
     <link rel="stylesheet" href="assets/css/amazeui.min.css" />
-    <link rel="stylesheet" type="text/css" href="assets/js/datetimepicker/css/amazeui.datetimepicker.css">
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
 </head>
@@ -47,64 +46,47 @@
         <!-- content start -->
         <div class="admin-content">
             <div class="am-cf am-padding">
-                <div class="am-fl am-cf"><strong class="am-text-lg">车辆管理</strong> / <small class="am-text-primary">司机管理</small></div>
+                <div class="am-fl am-cf">
+                    <strong class="am-text-lg">帐号管理</strong> / <strong class="am-text-lg">车主管理</strong> / <small class="am-text-primary">消费记录</small>
+                </div>
             </div>
-            <form class="am-form am-form-inline am-margin-left am-margin-right" method="get" action="">
-                <input type="hidden" name="pageIndex" value="0" />
-                <input type="hidden" name="pageSize" value="20" />
-                <input type="hidden" name="type" value="3" />
-                <div class="am-form-group">
-                    <input type="text" name="username" class="am-input-sm" placeholder="姓名/电话">
+            <div class="am-g">
+                <div class="am-u-md-12">
+                    <div class="am-btn-group am-btn-group-xs">
+                        <a href="javascript:history.go(-1)" class="am-btn am-btn-primary"><span class="am-icon-reply-all"></span> 返回</a>
+                    </div>
                 </div>
-                <div class="am-form-group am-form-icon">
-                    <i class="am-icon-calendar"></i>
-                    <input type="text" name="registTime" class="J_datetime am-input-sm am-form-field" data-provide="datetimepicker-inline" placeholder="注册时间" data-date-format="yyyy-mm-dd hh:ii" data-date-language="zh-CN" data-date-autoclose="1" readonly>
-                </div>
-                <button class="J_search am-btn am-btn-primary am-btn-sm" type="submit"><i class="am-icon-search"></i> 查询</button>
-                <button class="J_export am-btn am-btn-warning am-btn-sm" type="submit"><i class="am-icon-cloud-upload"></i> 导出表格</button>
-            </form>
+            </div>
             <hr>
-            <ul class="e-tab am-cf am-margin-left">
-                <li><a href="车辆管理-司机管理-服务中.html">服务中（111）</a></li>
-                <li><a href="车辆管理-司机管理-冻结中.html">冻结中（12）</a></li>
-                <li class="active"><a href="车辆管理-司机管理-黑名单.html">黑名单（12）</a></li>
-            </ul>
             <div class="am-g">
                 <div class="am-u-sm-12">
                     <table class="am-table am-table-striped am-table-hover table-main">
                         <thead>
                             <tr>
-                                <th>司机姓名</th>
-                                <th>联系电话</th>
+                                <th>消费时间</th>
                                 <th>储值卡ID</th>
-                                <th>身份</th>
-                                <th>车主</th>
-                                <th>注册时间</th>
-                                <th>储值</th>
-                                <th>返现</th>
+                                <th>消费额度</th>
                                 <th>积分</th>
-                                <th>操作</th>
+                                <th>购气</th>
+                                <th>参与活动</th>
+                                <th>消费人</th>
+                                <th>充值人</th>
+                                <th>电话</th>
+                                <th>车辆信息</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr data-id="1">
-                                <td>李彦宏</td>
-                                <td>18691954193</td>
-                                <td>E123456</td>
-                                <td>个人司机</td>
-                                <td>王石</td>
                                 <td class="table-datetime">2014-12-12 12:12:12</td>
-                                <td>300 <a href="车辆管理-某车主司机充值.html">查看</a></td>
-                                <td>30 <a href="车辆管理-某车主司机充值.html">查看</a></td>
-                                <td>100 <a href="车辆管理-某车主司机消费.html">查看</a></td>
-                                <td width="150">
-                                    <div class="am-btn-toolbar">
-                                        <div class="am-btn-group am-btn-group-xs">
-                                            <a href="车辆管理-司机管理-详情.html" class="am-btn am-btn-default am-btn-xs"><span class="am-icon-list"></span> 详情</a>
-                                            <button class="J_white am-btn am-btn-default am-btn-xs am-text-success"><span class="am-icon-check-circle-o"></span> 激活</button>
-                                        </div>
-                                    </div>
-                                </td>
+                                <td>E123456</td>
+                                <td>100</td>
+                                <td>10</td>
+                                <td>100kg</td>
+                                <td>10</td>
+                                <td>无</td>
+                                <td>孟星魂</td>
+                                <td>18691954193</td>
+                                <td>东风卡车 陕A123456</td>
                             </tr>
                         </tbody>
                     </table>
@@ -128,17 +110,6 @@
         <!-- content end -->
     </div>
     <a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
-    <div class="J_confirm am-modal am-modal-confirm" tabindex="-1" id="my-confirm">
-        <div class="am-modal-dialog">
-            <div class="am-modal-hd">司机管理</div>
-            <div class="am-modal-bd">是否激活该司机,激活后该司机可继续使用当前绑定手机登录
-            </div>
-            <div class="am-modal-footer">
-                <span class="am-modal-btn" data-am-modal-cancel>取消</span>
-                <span class="am-modal-btn" data-am-modal-confirm>确定</span>
-            </div>
-        </div>
-    </div>
     <footer>
         <hr>
         <p class="am-padding-left">&copy;&nbsp;E站途管理中心&nbsp;&nbsp;&nbsp;&nbsp;全程技术支持：
@@ -154,10 +125,7 @@
     <script src="assets/js/jquery.min.js"></script>
     <!--<![endif]-->
     <script src="assets/js/amazeui.min.js"></script>
-    <script src="assets/js/datetimepicker/js/amazeui.datetimepicker.min.js"></script>
-    <script src="assets/js/datetimepicker/js/locales/amazeui.datetimepicker.zh-CN.js"></script>
     <script src="assets/js/app.js"></script>
-    <script src="assets/js/carmanage.js"></script>
 </body>
 
 </html>

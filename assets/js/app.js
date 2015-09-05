@@ -30,56 +30,56 @@
                 iconClass: 'iconfont icon-daishenhe'
             }]
         }, {
-            name: '销售管理',
-            href: '#',
-            iconClass: 'iconfont icon-xiaoshouguanli01',
-            active: false,
-            children: [{
-                name: '已售车',
-                href: '销售管理-全部已售车.html',
-                iconClass: 'iconfont icon-03jixieqiugou'
-            }]
-        }, {
             name: '车辆管理',
-            pinyinName:'cheliangguanli',
+            pinyinName: 'cheliangguanli',
             href: '#',
             iconClass: 'iconfont icon-yonghuguanli',
-            active: false,
+            active: true,
             children: [{
                 name: '司机管理',
-                href: '车辆管理-司机管理.html',
+                href: '车辆管理-司机管理-服务中.html',
                 iconClass: 'iconfont icon-person'
             }, {
-                name: '未认证经纪人',
-                href: '用户管理-未认证经纪人.html',
+                name: '车主管理',
+                href: '车辆管理-车主管理-服务中.html',
                 iconClass: 'iconfont icon-weishimingrenzheng'
             }, {
-                name: '已认证经纪人',
-                href: '用户管理-已认证经纪人.html',
+                name: '充值记录',
+                href: '车辆管理-充值记录.html',
                 iconClass: 'iconfont icon-renzheng'
             }, {
-                name: '待审核经纪人',
-                href: '用户管理-待审核经纪人.html',
+                name: '消费记录',
+                href: '车辆管理-消费记录.html',
                 iconClass: 'iconfont icon-shenhe'
             }, {
-                name: '管理员',
-                href: '用户管理-管理员.html',
+                name: '返现/积分设置',
+                href: '车辆管理-返现积分设置.html',
+                iconClass: 'iconfont icon-guanliyuan'
+            }, {
+                name: '返现/积分设置',
+                href: '车辆管理-返现积分设置.html',
+                iconClass: 'iconfont icon-guanliyuan'
+            }, {
+                name: '活动管理',
+                href: '车辆管理-活动管理.html',
+                iconClass: 'iconfont icon-guanliyuan'
+            }, {
+                name: '积分商场',
+                href: '车辆管理-活动管理.html',
+                iconClass: 'iconfont icon-guanliyuan'
+            }, {
+                name: '消息推送',
+                href: '车辆管理-消息推送.html',
                 iconClass: 'iconfont icon-guanliyuan'
             }]
         }, {
-            name: '奖励管理',
-            href: '#',
-            iconClass: 'iconfont icon-jiangliguanli',
-            active: false,
-            children: [{
-                name: '认证奖励',
-                href: '奖励管理-认证奖励.html',
-                iconClass: 'iconfont icon-jiangli'
-            }, {
-                name: '车源奖励',
-                href: '奖励管理-车源奖励.html',
-                iconClass: 'iconfont icon-jixieshebeijizhaomingb'
-            }]
+            name: '异常情况列表',
+            href: '异常情况列表.html',
+            iconClass: 'iconfont icon-jiangliguanli'
+        }, {
+            name: '资讯管理',
+            href: '资讯管理.html',
+            iconClass: 'iconfont icon-jiangliguanli'
         }, {
             name: '配置管理',
             href: '#',
