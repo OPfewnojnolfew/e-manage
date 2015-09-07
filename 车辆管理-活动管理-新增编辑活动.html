@@ -14,6 +14,7 @@
     <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
     <meta name="apple-mobile-web-app-title" content="Amaze UI" />
     <link rel="stylesheet" href="assets/css/amazeui.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/js/datetimepicker/css/amazeui.datetimepicker.css">
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
 </head>
@@ -47,47 +48,48 @@
         <!-- content start -->
         <div class="admin-content">
             <div class="am-cf am-padding">
-                <div class="am-fl am-cf"><strong class="am-text-lg">车辆管理</strong> / <small class="am-text-primary">新增消息推送</small></div>
+                <div class="am-fl am-cf"><strong class="am-text-lg">车辆管理</strong> / <strong class="am-text-lg">活动管理</strong> / <small class="am-text-primary">新增/编辑活动</small></div>
             </div>
             <div class="am-panel am-panel-default am-margin-left am-margin-right">
                 <div class="am-panel-bd">
                     <div class="am-g">
                         <div class="am-u-sm-12 am-u-md-8 am-u-md-push-1">
                             <form class="J_form am-form am-form-horizontal" action="" method="post" onsubmit="return false;">
-                                <input type="hidden" id="message-id" name="messageid" value="" />
+                                <input type="hidden" id="activity_id" name="id" value="" />
                                 <div class="am-form-group">
-                                    <label for="message-title" class="am-u-md-3 am-form-label">消息标题:</label>
+                                    <label for="activity-title" class="am-u-md-3 am-form-label">标题:</label>
                                     <div class="am-u-md-9">
-                                        <input type="text" id="message-title" name="title" />
+                                        <input type="text" name="title" id="activity-title" placeholder="请输入标题">
                                     </div>
                                 </div>
                                 <div class="am-form-group">
-                                    <label for="message-link" class="am-u-md-3 am-form-label">链接:</label>
-                                    <div class="am-u-md-9">
-                                        <input type="text" id="message-link" name="link" />
+                                    <label class="am-u-sm-3 am-form-label">活动图片:</label>
+                                    <div class="am-u-sm-9">
+                                        <div class="J_upload_container" data-idname="imageid" data-pathname="imagepath" data-idvalue="11" data-pathvalue="1.png">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="am-form-group">
-                                    <label for="message-content" class="am-u-md-3 am-form-label">推送对象:</label>
+                                    <label for="activity-starttime" class="am-u-md-3 am-form-label">开始时间:</label>
                                     <div class="am-u-md-4 am-u-end">
-                                        <select class="am-form-select e-select-sm">
-                                            <option value="0">-请选择-</option>
-                                            <option value="1">个体</option>
-                                            <option value="2">司机</option>
-                                            <option value="3">车主</option>
-                                            <option value="4">加气站</option>
-                                        </select>
+                                        <input type="text" id="activity-starttime" name="starttime" class="J_datetime am-input-sm am-form-field" data-provide="datetimepicker-inline" placeholder="推送开始时间" data-date-format="yyyy-mm-dd hh:ii" data-date-language="zh-CN" data-date-autoclose="1" readonly>
                                     </div>
                                 </div>
                                 <div class="am-form-group">
-                                    <label for="message-content" class="am-u-md-3 am-form-label">消息内容:</label>
-                                    <div class="am-u-md-9">
-                                        <textarea id="message-content" name="messagecontent" placeholder="请输入消息内容"></textarea>
+                                    <label for="activity-endtime" class="am-u-md-3 am-form-label">结束时间:</label>
+                                    <div class="am-u-md-4 am-u-end">
+                                        <input type="text" id="activity-endtime" name="endtime" class="J_datetime am-input-sm am-form-field" data-provide="datetimepicker-inline" placeholder="推送结束时间" data-date-format="yyyy-mm-dd hh:ii" data-date-language="zh-CN" data-date-autoclose="1" readonly>
+                                    </div>
+                                </div>
+                                <div class="am-form-group">
+                                    <label for="activity-link" class="am-u-sm-3 am-form-label">链接:</label>
+                                    <div class="am-u-sm-9">
+                                        <input type="email" name="link" id="activity-link" placeholder="请填写连接地址">
                                     </div>
                                 </div>
                                 <div class="am-form-group">
                                     <div class="am-u-md-9 am-u-md-push-3">
-                                        <button type="button" class="J_submit am-btn am-btn-primary">新增</button>
+                                        <button type="button" class="J_submit am-btn am-btn-primary">新增/编辑</button>
                                     </div>
                                 </div>
                             </form>
@@ -115,7 +117,10 @@
     <!--<![endif]-->
     <script src="assets/js/amazeui.min.js"></script>
     <script src="assets/js/app.js"></script>
-    <script type="text/javascript" src="assets/js/messagemanage.js"></script>
+    <script src="assets/js/datetimepicker/js/amazeui.datetimepicker.min.js"></script>
+    <script src="assets/js/datetimepicker/js/locales/amazeui.datetimepicker.zh-CN.js"></script>
+    <script src="assets/js/uploadify/jquery.uploadify.js"></script>
+    <script src="assets/js/activitymanage.js"></script>
 </body>
 
 </html>

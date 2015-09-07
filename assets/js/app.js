@@ -56,10 +56,6 @@
                 href: '车辆管理-返现积分设置.html',
                 iconClass: 'iconfont icon-guanliyuan'
             }, {
-                name: '返现/积分设置',
-                href: '车辆管理-返现积分设置.html',
-                iconClass: 'iconfont icon-guanliyuan'
-            }, {
                 name: '活动管理',
                 href: '车辆管理-活动管理.html',
                 iconClass: 'iconfont icon-guanliyuan'
@@ -70,6 +66,14 @@
             }, {
                 name: '消息推送',
                 href: '车辆管理-消息推送.html',
+                iconClass: 'iconfont icon-guanliyuan'
+            }, {
+                name: 'app引导页设置',
+                href: '车辆管理-app引导页设置.html',
+                iconClass: 'iconfont icon-guanliyuan'
+            }, {
+                name: 'app幻灯片设置',
+                href: '车辆管理-app幻灯片设置.html',
                 iconClass: 'iconfont icon-guanliyuan'
             }]
         }, {

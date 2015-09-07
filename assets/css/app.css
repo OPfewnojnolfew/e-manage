@@ -87,6 +87,34 @@
     transform: translateY(0)
 }
 
+.uploadify {
+    position: relative;
+}
+
+.uploadify object {
+    left: 0;
+}
+
+.uploadify-button {
+    background: #5eb95e;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+}
+
+.uploadify:hover .uploadify-button {
+    background: #429842;
+}
+
+.image-uploadify-preview {
+    display: none;
+    position: relative;
+    padding: 8px 0;
+    font-size: 12px;
+    color: #858585;
+    text-align: left;
+}
+
 .toggle-off {
     background: url(../img/toggle.png) no-repeat;
 }

@@ -213,11 +213,11 @@ $(function() {
      * @return {[type]}   [description]
      */
     $('.J_model_submit').on('click', function() {
-            var $modelName = $('#model-name'),
-                id = $('#model_id').val(),
-                t = id ? '编辑' : '新增',
-                modelName = $.trim($modelName.val());
-            if (!modelName) {
+        var $modelName = $('#model-name'),
+            id = $('#model_id').val(),
+            t = id ? '编辑' : '新增',
+            modelName = $.trim($modelName.val());
+        if (!modelName) {
             notify.warn('模板名称不能为空！');
             $modelName.focus();
             return false;
@@ -230,6 +230,19 @@ $(function() {
                 } else {
                     notify.warn(t + '失败');
                 }
+            }
+        });
+    });
+
+    $('.J_user_right').on('change', function() {
+        var id = $(this).val();
+        $.get('', {
+            id: id
+        }).then(function(res) {
+            if (res.err_code == 0) {
+                $('.J_right_show').html(res.right);
+            } else {
+                notify.warn('获取角色权限失败');
             }
         });
     });

@@ -41,65 +41,57 @@
     <div class="am-cf admin-main">
         <!-- sidebar start -->
         <div class="J_menu admin-sidebar am-offcanvas" id="admin-offcanvas">
-            <div class="am-offcanvas-bar admin-offcanvas-bar"></div>
+            <div class="am-offcanvas-bar admin-offcanvas-bar">
+            </div>
         </div>
         <!-- sidebar end -->
         <!-- content start -->
         <div class="admin-content">
             <div class="am-cf am-padding">
-                <div class="am-fl am-cf"><strong class="am-text-lg">车辆管理</strong> / <small class="am-text-primary">消息推送</small></div>
+                <div class="am-fl am-cf"><strong class="am-text-lg">资讯管理</strong> / <small class="am-text-primary">新增/编辑资讯</small></div>
             </div>
-            <form class="am-form am-form-inline am-margin-left am-margin-right" method="get" action="">
-                <!--    <input type="hidden" name="pageIndex" value="0" />
-                <input type="hidden" name="pageSize" value="20" />
-                <div class="am-form-group">
-                    <input type="text" name="messagecontent" class="am-input-sm" placeholder="消息内容">
-                </div>
-                <div class="am-form-group am-form-icon">
-                    <i class="am-icon-calendar"></i>
-                    <input type="text" name="messagetime" class="J_datetime am-input-sm am-form-field" data-provide="datetimepicker-inline" placeholder="推送时间" data-date-format="yyyy-mm-dd hh:ii" data-date-language="zh-CN" data-date-autoclose="1" readonly>
-                </div>
-                <div class="am-form-group">
-                    <select name="messagetype" class="J_select am-form-select am-input-sm e-select-sm">
-                        <option value="0">-请选择-</option>
-                        <option>活动</option>
-                        <option>资讯</option>
-                    </select>
-                </div>
-                <button class="J_search am-btn am-btn-primary am-btn-sm" type="submit"><i class="am-icon-search"></i> 查询</button> -->
-                <a href="车辆管理-新增消息推送.html" class="am-btn am-btn-success am-btn-sm" type="submit"><i class="am-icon-plus"></i> 添加推送</a>
-            </form>
-            <hr>
-            <div class="am-g">
-                <div class="am-u-sm-12">
-                    <table class="am-table am-table-striped am-table-hover table-main">
-                        <thead>
-                            <tr>
-                                <th>消息标题</th>
-                                <th>消息内容</th>
-                                <th>推送对象</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr data-id="1">
-                                <td>一条新的message</td>
-                                <td>一条新的message</td>
-                                <td>加气站</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="am-cf">
-                        共 15 条记录
-                        <div class="am-fr">
-                            <ul class="am-pagination">
-                                <li class="am-disabled"><a href="#">«</a></li>
-                                <li class="am-active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#">»</a></li>
-                            </ul>
+            <div class="am-panel am-panel-default am-margin-left am-margin-right">
+                <div class="am-panel-bd">
+                    <div class="am-g">
+                        <div class="am-u-sm-12 am-u-md-8 am-u-md-push-1">
+                            <form class="J_form am-form am-form-horizontal" action="" method="post" onsubmit="return false;">
+                                <input type="hidden" id="news_id" name="id" value="" />
+                                <div class="am-form-group">
+                                    <label for="news-title" class="am-u-md-3 am-form-label">标题:</label>
+                                    <div class="am-u-md-9">
+                                        <input type="text" name="title" id="news-title" placeholder="请输入标题">
+                                    </div>
+                                </div>
+                                <div class="am-form-group">
+                                    <label for="news-intro" class="am-u-md-3 am-form-label">简介:</label>
+                                    <div class="am-u-md-9">
+                                        <textarea name="intro" id="news-intro" placeholder="请输入简介"></textarea>
+                                    </div>
+                                </div>
+                                <div class="am-form-group">
+                                    <label for="news-starttime" class="am-u-md-3 am-form-label">发布时间:</label>
+                                    <div class="am-u-md-4 am-u-end">
+                                        <input type="text" id="news-starttime" name="starttime" class="J_datetime am-input-sm am-form-field" data-provide="datetimepicker-inline" placeholder="发布时间" data-date-format="yyyy-mm-dd hh:ii" data-date-language="zh-CN" data-date-autoclose="1" readonly>
+                                    </div>
+                                </div>
+                                <div class="am-form-group">
+                                    <label for="news-comment" class="am-u-md-3 am-form-label">是否可评:</label>
+                                    <div class="am-u-md-9 am-padding-top-xs">
+                                        <input type="checkbox" value="1" name="comment" id="news-comment">
+                                    </div>
+                                </div>
+                                <div class="am-form-group">
+                                    <label for="news-des" class="am-u-md-3 am-form-label">内容:</label>
+                                    <div class="am-u-md-9">
+                                        <textarea name="des" id="news-des" placeholder="请输入内容"></textarea>
+                                    </div>
+                                </div>
+                                <div class="am-form-group">
+                                    <div class="am-u-md-9 am-u-md-push-3">
+                                        <button type="button" class="J_user_submit am-btn am-btn-primary">新增/编辑</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -123,10 +115,10 @@
     <script src="assets/js/jquery.min.js"></script>
     <!--<![endif]-->
     <script src="assets/js/amazeui.min.js"></script>
+    <script src="assets/js/app.js"></script>
     <script src="assets/js/datetimepicker/js/amazeui.datetimepicker.min.js"></script>
     <script src="assets/js/datetimepicker/js/locales/amazeui.datetimepicker.zh-CN.js"></script>
-    <script src="assets/js/app.js"></script>
-    <script src="assets/js/user.js"></script>
+    <script src="assets/js/newsmanage.js"></script>
 </body>
 
 </html>

@@ -54,13 +54,9 @@
                 <div class="am-form-group">
                     <input type="text" name="activityname" class="am-input-sm" placeholder="活动名称">
                 </div>
-                <div class="am-form-group">
-                    <select class="J_select am-form-select am-input-sm e-select-sm" name="activitystatus">
-                        <option value="">活动状态</option>
-                    </select>
-                </div>
                 <button class="J_search am-btn am-btn-primary am-btn-sm" type="submit"><i class="am-icon-search"></i> 查询</button>
                 <button class="J_export am-btn am-btn-warning am-btn-sm"><i class="am-icon-cloud-upload"></i> 导出表格</button>
+                <a href="车辆管理-活动管理-新增编辑活动.html" class="am-btn am-btn-success am-btn-sm"><i class="am-icon-plus"></i> 添加活动</a>
             </form>
             <hr>
             <div class="am-g">
@@ -71,25 +67,27 @@
                                 <th class="table-check">
                                     <input type="checkbox" />
                                 </th>
+                                <th>活动图片</th>>
                                 <th>活动名称</th>
-                                <th>活动时间</th>
-                                <th>活动状态</th>
+                                <th>活动开始时间</th>
+                                <th>活动结束时间</th>
                                 <th>操作</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr data-id="1">
-                                <td>
+                                <td class="am-text-middle">
                                     <input type="checkbox" />
                                 </td>
-                                <td>金秋充值</td>
-                                <td class="table-datetime">2014-12-12 12:12:12</td>
-                                <td>未开始</td>
-                                <td width="220">
+                                <td class="am-text-middle" class="am-text-middle"><img src="" width="70" height="54"></td>
+                                <td class="am-text-middle">金秋充值</td>
+                                <td class="am-text-middle" class="table-datetime">2014-12-12 12:12:12</td>
+                                <td class="am-text-middle" class="table-datetime">2014-12-13 12:12:12</td>
+                                <td class="am-text-middle" width="220">
                                     <div class="am-btn-toolbar">
                                         <div class="am-btn-group am-btn-group-xs">
                                             <a href="" class="J_detail table-btn am-btn am-btn-default am-btn-xs"><span class="am-icon-list"></span> 详情</a>
-                                            <a href="用" class="J_edit_user am-btn am-btn-default am-btn-xs am-text-primary"><span class="am-icon-edit"></span> 编辑</a>
+                                            <a href="车辆管理-活动管理-新增编辑活动.html" class="am-btn am-btn-default am-btn-xs am-text-primary"><span class="am-icon-edit"></span> 编辑</a>
                                             <button class="J_single_del am-btn am-btn-default am-btn-xs am-text-danger"><span class="am-icon-trash-o"></span> 删除</button>
                                         </div>
                                     </div>

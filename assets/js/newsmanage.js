@@ -29,14 +29,6 @@ $(function() {
                 onCancel: function() {}
             });
         };
-    var imageUploadify = $('.J_upload_container').imageUploadify({
-        previewWidth: 120,
-        previewHeight: 80,
-        fieldFormat: {
-            uploadedImageId: 'yourselfiamgeid',
-            uploadedImagePath: 'yourselfiamgesrc'
-        }
-    });
     /**
      * 单条删除
      * @param  {[type]} 
@@ -70,19 +62,14 @@ $(function() {
      * @return {[type]}   [description]
      */
     $('.J_submit').on('click', function() {
-        var $title = $('#activity-title'),
-            $id = $('#activity_id'),
+        var $title = $('#news-title'),
+            $id = $('#news_id'),
             id = $id.val(),
             t = id ? '编辑' : '添加',
             title = $.trim($title.val());
         if (title === '') {
             notify.warn('标题不能为空!');
             $title.focus();
-            return;
-        }
-        var message = imageUploadify.get();
-        if (message && (message = message.errorMessage)) {
-            notify.warn(message);
             return;
         }
         $('.J_form').ajaxSubmit({

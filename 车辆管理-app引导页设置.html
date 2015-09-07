@@ -47,67 +47,63 @@
         <!-- content start -->
         <div class="admin-content">
             <div class="am-cf am-padding">
-                <div class="am-fl am-cf"><strong class="am-text-lg">车辆管理</strong> / <small class="am-text-primary">消息推送</small></div>
+                <div class="am-fl am-cf"><strong class="am-text-lg">车辆管理</strong> / <small class="am-text-primary">app设置</small></div>
             </div>
-            <form class="am-form am-form-inline am-margin-left am-margin-right" method="get" action="">
-                <!--    <input type="hidden" name="pageIndex" value="0" />
-                <input type="hidden" name="pageSize" value="20" />
-                <div class="am-form-group">
-                    <input type="text" name="messagecontent" class="am-input-sm" placeholder="消息内容">
-                </div>
-                <div class="am-form-group am-form-icon">
-                    <i class="am-icon-calendar"></i>
-                    <input type="text" name="messagetime" class="J_datetime am-input-sm am-form-field" data-provide="datetimepicker-inline" placeholder="推送时间" data-date-format="yyyy-mm-dd hh:ii" data-date-language="zh-CN" data-date-autoclose="1" readonly>
-                </div>
-                <div class="am-form-group">
-                    <select name="messagetype" class="J_select am-form-select am-input-sm e-select-sm">
-                        <option value="0">-请选择-</option>
-                        <option>活动</option>
-                        <option>资讯</option>
-                    </select>
-                </div>
-                <button class="J_search am-btn am-btn-primary am-btn-sm" type="submit"><i class="am-icon-search"></i> 查询</button> -->
-                <a href="车辆管理-新增消息推送.html" class="am-btn am-btn-success am-btn-sm" type="submit"><i class="am-icon-plus"></i> 添加推送</a>
-            </form>
-            <hr>
-            <div class="am-g">
-                <div class="am-u-sm-12">
-                    <table class="am-table am-table-striped am-table-hover table-main">
-                        <thead>
-                            <tr>
-                                <th>消息标题</th>
-                                <th>消息内容</th>
-                                <th>推送对象</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr data-id="1">
-                                <td>一条新的message</td>
-                                <td>一条新的message</td>
-                                <td>加气站</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="am-cf">
-                        共 15 条记录
-                        <div class="am-fr">
-                            <ul class="am-pagination">
-                                <li class="am-disabled"><a href="#">«</a></li>
-                                <li class="am-active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#">»</a></li>
-                            </ul>
-                        </div>
-                    </div>
+            <div class="am-panel am-panel-default am-margin">
+                <div class="am-panel-hd">引导页设置</div>
+                <div class="am-panel-bd">
+                    <ul class="ad-uploadcontainer am-avg-md-3 am-avg-sm-3">
+                        <li  data-id="111" data-index="11" data-imageId="1" data-imagePath="1.png" class="am-margin-bottom">
+                            <div class="ad-uploadify">
+                                <div class="ad-uploadify-view">
+                                    <img src="">
+                                </div>
+                                <div class="ad-uploadify-content">
+                                    <p><span>排序:</span>1</p>
+                                    <p><span>上传时间:</span>2015-12-12 11:11:11</span>
+                                    </p>
+                                    <div class="ad-uploadify-operate">
+                                        <a href="javascript:void(0)" class="ad-uploadify-edit am-btn am-btn-warning am-btn-xs"><i class="am-icon-edit"></i> 替换</a>
+                                        <a href="javascript:void(0)" class="ad-uploadify-type am-btn am-btn-danger am-btn-xs">上架/下架</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="am-margin-bottom">
+                            <div class="ad-uploadify">
+                                <a href="javascript:void(0)" class="ad-uploadify-add am-icon-plus"></a>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
         <!-- content end -->
     </div>
     <a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
+    <div class="J_moal am-modal am-modal-no-btn" tabindex="-1" id="doc-modal-1">
+        <div class="am-modal-dialog">
+            <div class="am-modal-hd am-text-left"><span>添加</span>引导页
+                <a href="javascript: void(0)" class="am-close" data-am-modal-close>&times;</a>
+            </div>
+            <div class="am-modal-bd">
+                <div class="am-g">
+                    <div class="am-u-md-12">
+                        <form class="J_modal_form am-form am-form-horizontal" action="" method="post" onsubmit="return false;">
+                            <input type="hidden" name="id" class="J_modal_id" value="5" />
+                            <div class="am-margin">
+                                <input type="text" name="name" class="J_modal_index" placeholder="排序">
+                            </div>
+                            <div class="J_upload_container am-margin" data-idname="imageid" data-pathname="imagepath"> </div>
+                            <div class="am-margin">
+                                <button type="button" class="J_modal_submit am-btn am-btn-primary">添加/编辑</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <footer>
         <hr>
         <p class="am-padding-left">&copy;&nbsp;E站途管理中心&nbsp;&nbsp;&nbsp;&nbsp;全程技术支持：
@@ -125,8 +121,9 @@
     <script src="assets/js/amazeui.min.js"></script>
     <script src="assets/js/datetimepicker/js/amazeui.datetimepicker.min.js"></script>
     <script src="assets/js/datetimepicker/js/locales/amazeui.datetimepicker.zh-CN.js"></script>
+    <script src="assets/js/uploadify/jquery.uploadify.js"></script>
     <script src="assets/js/app.js"></script>
-    <script src="assets/js/user.js"></script>
+    <script src="assets/js/appset.js"></script>
 </body>
 
 </html>
