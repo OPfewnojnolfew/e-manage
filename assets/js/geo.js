@@ -395,12 +395,16 @@
                 isInit = true,
                 provinceName = option.provinceName || $this.attr('data-provinceName') || '',
                 cityName = option.cityName || $this.attr('data-cityName') || '',
+                areaName = option.areaName || $this.attr('data-areaName') || '',
                 provinceValue = option.provinceValue || $this.attr('data-provinceValue') || '',
                 cityValue = option.cityValue || $this.attr('data-cityValue') || '',
-                $province = $('<li><select name="' + provinceName + '" class="am-input-sm"></select></li>'),
-                $city = $('<li><select name="' + cityName + '" class="am-input-sm"></select></li>'),
+                areaValue = option.areaValue || $this.attr('data-areaValue') || '',
+                $province = $('<li><select name="' + provinceName + '" class="e-select-sm"></select></li>'),
+                $city = $('<li><select name="' + cityName + '" class="e-select-sm"></select></li>'),
+                $area = $('<li><select name="' + areaName + '" class="e-select-sm"></select></li>'),
                 $provinceSelect = $('select', $province),
-                $citySelect = $('select', $city);
+                $citySelect = $('select', $city),
+                $areaSelect = $('select', $area);
             var i = 0,
                 item,
                 $option,
@@ -411,7 +415,6 @@
                 $option = $('<option value="' + item + '" data-index="' + i + '" ' + (provinceValue === item ? 'selected' : '') + '>' + item + '</option>');
                 $provinceSelect.append($option);
             }
-            // $citySelect.html('<option value="">选择市</option>');
             $provinceSelect.on('change', function() {
                 $citySelect.html('<option value="">选择市</option>');
                 var index = $provinceSelect.find('option:selected').attr('data-index'),
@@ -419,16 +422,31 @@
                 if (cityItems) {
                     for (i = 0, length = cityItems.length; i < length; i++) {
                         item = cityItems[i];
-                        $option = $('<option value="' + item + '" ' + (cityValue === item ? 'selected' : '') + '>' + item + '</option>');
+                        $option = $('<option value="' + item + '" data-index="' + i + '"  ' + (cityValue === item ? 'selected' : '') + '>' + item + '</option>');
                         $citySelect.append($option);
                     }
-                }!isInit && option.checked && option.checked($provinceSelect.val(), $citySelect.val());
+                }!isInit && option.checked && option.checked($provinceSelect.val(), $citySelect.val(), $areaSelect.val());
                 isInit = false;
+                $citySelect.trigger('change');
             });
             $citySelect.on('change', function() {
-                option.checked && option.checked($provinceSelect.val(), $citySelect.val());
+                option.checked && option.checked($provinceSelect.val(), $citySelect.val(), $areaSelect.val());
+                $areaSelect.html('<option value="">选择地区</option>');
+                var cityIndex = $citySelect.find('option:selected').attr('data-index'),
+                    provinceIndex = $provinceSelect.find('option:selected').attr('data-index'),
+                    areaItems = dsy.Items['0_' + provinceIndex + '_' + cityIndex];
+                if (areaItems) {
+                    for (var i = 0; i < areaItems.length; i++) {
+                        item = areaItems[i];
+                        $option = $('<option value="' + item + '" ' + (areaValue === item ? 'selected' : '') + '>' + item + '</option>');
+                        $areaSelect.append($option);
+                    }
+                }
             });
-            $this.append($province).append($city);
+            $areaSelect.on('change', function() {
+                option.checked && option.checked($provinceSelect.val(), $citySelect.val(), $areaSelect.val());
+            });
+            $this.append($province).append($city).append($area);
             $provinceSelect.trigger('change');
         });
     };

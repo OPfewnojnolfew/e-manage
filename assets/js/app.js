@@ -85,6 +85,10 @@
             href: '资讯管理.html',
             iconClass: 'iconfont icon-jiangliguanli'
         }, {
+            name: '分享设置',
+            href: '分享设置.html',
+            iconClass: 'iconfont icon-jiangliguanli'
+        }, {
             name: '配置管理',
             href: '#',
             active: false,
