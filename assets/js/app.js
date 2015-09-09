@@ -97,6 +97,32 @@
                 name: '加气站管理',
                 href: '加气站管理-加气站管理-服务中.html',
                 iconClass: 'iconfont icon-pinpai'
+            }, {
+                name: '订单管理',
+                href: '加气站管理-订单管理-已处理.html',
+                iconClass: 'iconfont icon-pinpai'
+            }, {
+                name: '对账设置',
+                href: '加气站管理-对账设置.html',
+                iconClass: 'iconfont icon-pinpai'
+            }, {
+                name: 'app幻灯片设置',
+                href: '加气站管理-app幻灯片设置.html',
+                iconClass: 'iconfont icon-pinpai'
+            }]
+        }, {
+            name: '广告管理',
+            href: '#',
+            active: false,
+            iconClass: 'iconfont icon-peizhi',
+            children: [{
+                name: '广告审核',
+                href: '广告管理-广告审核.html',
+                iconClass: 'iconfont icon-pinpai'
+            }, {
+                name: '全站广告',
+                href: '广告管理-全站广告.html',
+                iconClass: 'iconfont icon-pinpai'
             }]
         }];
         var i = 0,
