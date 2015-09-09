@@ -89,33 +89,14 @@
             href: '分享设置.html',
             iconClass: 'iconfont icon-jiangliguanli'
         }, {
-            name: '配置管理',
+            name: '加气站管理',
             href: '#',
             active: false,
             iconClass: 'iconfont icon-peizhi',
             children: [{
-                name: '品牌配置',
-                href: '配置管理-品牌配置.html',
+                name: '加气站管理',
+                href: '加气站管理-加气站管理-服务中.html',
                 iconClass: 'iconfont icon-pinpai'
-            }, {
-                name: '机型配置',
-                href: '配置管理-机型配置.html',
-                iconClass: 'iconfont icon-model'
-            }, {
-                name: '奖励配置',
-                href: '配置管理-奖励配置.html',
-                iconClass: 'iconfont icon-jiangli'
-            }]
-        }, {
-            name: '图文管理',
-            href: '图文管理-全部.html',
-            iconClass: 'iconfont icon-tuwen',
-            active: true,
-            children: [{
-                name: '全部图文',
-                href: '图文管理-全部.html',
-                active: true,
-                iconClass: 'iconfont icon-tuwen'
             }]
         }];
         var i = 0,
