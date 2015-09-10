@@ -1,0 +1,140 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>E站途管理中心</title>
+    <meta name="description" content="E站途管理中心">
+    <meta name="keywords" content="table">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="stylesheet" href="assets/css/amazeui.min.css" />
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+<![endif]-->
+    <header class="am-topbar admin-header">
+        <div class="admin-logo">
+            <a href="#" class="logo"></a>
+            <a href="#" class="admin-header-title">E站途管理中心</a>
+        </div>
+        <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+        <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+            <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
+                <li class="admin-header-user"><a href="javascript:;"><span class="iconfont icon-person"></span> <span>15958093225</span></a></li>
+                <li><span class="split"></span></li>
+                <li class="admin-header-exit am-hide-sm-only"><a href="javascript:;"><span class="am-icon-sign-out"></span> <span class="admin-fullText">退出</span></a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="am-cf admin-main">
+        <!-- sidebar start -->
+        <div class="J_menu admin-sidebar am-offcanvas" id="admin-offcanvas">
+            <div class="am-offcanvas-bar admin-offcanvas-bar"></div>
+        </div>
+        <!-- sidebar end -->
+        <!-- content start -->
+        <div class="admin-content">
+            <div class="am-cf am-padding">
+                <div class="am-fl am-cf"><strong class="am-text-lg">车辆管理</strong> / <small class="am-text-primary">订单管理</small></div>
+            </div>
+            <ul class="am-avg-sm-1 am-avg-md-4 am-margin am-padding am-text-center admin-content-list ">
+                <li><a href="JavaScript:void(0)" class="am-text-success"><span class="iconfont am-icon-btn">&#xe616;</span><br>订单总数<br>2300</a></li>
+                <li><a href="JavaScript:void(0)" class="am-text-warning"><span class="iconfont am-icon-btn">&#xe617;</span><br>已发货<br>308</a></li>
+                <li><a href="JavaScript:void(0)" class="am-text-danger"><span class="iconfont am-icon-btn">&#xe618;</span><br>已收货<br>80082</a></li>
+                <li><a href="JavaScript:void(0)" class="am-text-secondary"><span class="iconfont am-icon-btn">&#xe619;</span><br>浏览量<br>3000</a></li>
+            </ul>
+            <form class="am-form am-form-inline am-margin-left am-margin-right" method="get" action="">
+                <input type="hidden" name="pageIndex" value="0" />
+                <input type="hidden" name="pageSize" value="20" />
+                <input type="hidden" name="type" value="1" />
+                <div class="am-form-group">
+                    <input type="text" name="ordernum" class="am-input-sm" placeholder="订单流水线">
+                </div>
+                <div class="am-form-group">
+                    <select name="ordertype" class="J_select am-form-select am-input-sm e-select-sm">
+                        <option value="0">-请选择-</option>
+                        <option>已发货</option>
+                        <option>已收货</option>
+                    </select>
+                </div>
+                <button class="J_search am-btn am-btn-primary am-btn-sm" type="submit"><i class="am-icon-search"></i> 查询</button>
+            </form>
+            <hr>
+            <div class="am-g">
+                <div class="am-u-sm-12">
+                    <table class="am-table am-table-striped am-table-hover table-main">
+                        <thead>
+                            <tr>
+                                <th>订单流水号</th>
+                                <th>商品名称</th>
+                                <th>数量</th>
+                                <th>买家名称</th>
+                                <th>电话</th>
+                                <th>收货地址</th>
+                                <th>提交时间</th>
+                                <th>消耗积分</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-id="1">
+                                <td>10012</td>
+                                <td>手电筒</td>
+                                <td>22</td>
+                                <td>ace</td>
+                                <td>11111111111</td>
+                                <td>陕西雁塔区</td>
+                                <td class="table-datetime">2014-12-12 12:12:12</td>
+                                <td>11</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="am-cf">
+                        共 15 条记录
+                        <div class="am-fr">
+                            <ul class="am-pagination">
+                                <li class="am-disabled"><a href="#">«</a></li>
+                                <li class="am-active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">»</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- content end -->
+    </div>
+    <a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
+    <footer>
+        <hr>
+        <p class="am-padding-left">&copy;&nbsp;E站途管理中心&nbsp;&nbsp;&nbsp;&nbsp;全程技术支持：
+            <a href="http://yufukeji.com/" target="_blank">渔夫科技</a>
+        </p>
+    </footer>
+    <!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="assets/js/jquery.min.js"></script>
+    <!--<![endif]-->
+    <script src="assets/js/amazeui.min.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
