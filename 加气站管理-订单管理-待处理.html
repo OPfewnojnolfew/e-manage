@@ -60,7 +60,7 @@
                     <input type="text" name="addtime" class="J_datetime am-input-sm am-form-field" data-provide="datetimepicker-inline" placeholder="添加时间" data-date-format="yyyy-mm-dd hh:ii" data-date-language="zh-CN" data-date-autoclose="1" readonly>
                 </div>
                 <div class="am-form-group">
-                    <select class="J_select am-form-select am-input-sm e-select-sm">
+                    <select name="ordertype" class="J_select am-form-select am-input-sm e-select-sm">
                         <option value="0">-请选择-</option>
                         <option>自提</option>
                         <option>配送</option>
@@ -135,7 +135,7 @@
     <div class="J_moal am-modal am-modal-no-btn" tabindex="-1" id="doc-modal-1">
         <div class="am-modal-dialog">
             <div class="am-modal-hd am-text-left">处理
-                <a href="javascript: void(0)" class="am-close" data-am-modal-close>&times;</a>
+                <a href="javascript:void(0)" class="am-close" data-am-modal-close>&times;</a>
             </div>
             <div class="am-modal-bd">
                 <div class="am-g">
@@ -146,9 +146,9 @@
                                 <label class="am-u-md-3 am-form-label">LNG厂:</label>
                                 <div class="am-u-md-4">
                                     <select class="J_select am-form-select e-select-sm" name="lngname">
-                                        <option value="0">-请选择-</option>
-                                        <option>一场</option>
-                                        <option>二厂</option>
+                                        <option value="">-请选择-</option>
+                                        <option value="1">一厂</option>
+                                        <option value="2">二厂</option>
                                     </select>
                                 </div>
                                 <div class="am-u-md-5">

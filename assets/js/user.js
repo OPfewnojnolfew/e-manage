@@ -99,11 +99,11 @@ $(function() {
                     $.post('', {
                         ids: ids
                     }).then(function(res) {
-                        if (res.code == 200) {
+                        if (res.err_code == 0) {
                             notify.warn('删除成功');
                             callback && callback();
                         } else {
-                            notify.warn(res.message);
+                            notify.warn(res.err_msg);
                         }
                     });
                 },
@@ -170,7 +170,7 @@ $(function() {
         }
         $('.J_user_form').ajaxSubmit({
             success: function(res) {
-                if (res.code == 200) {
+                if (res.err_code == 0) {
                     notify.success(t + '成功');
                     location.href = '';
                 } else {
@@ -224,7 +224,7 @@ $(function() {
         }
         $('.J_model_form').ajaxSubmit({
             success: function(res) {
-                if (res.code == 200) {
+                if (res.err_code == 0) {
                     notify.success(t + '成功');
                     location.href = '';
                 } else {

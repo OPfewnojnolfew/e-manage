@@ -103,7 +103,7 @@ $(function() {
         }
         $('.J_form').ajaxSubmit({
             success: function(res) {
-                if (res.code == 200) {
+                if (res.err_code == 0) {
                     notify.success(t + '成功');
                     location.href = '';
                 } else {

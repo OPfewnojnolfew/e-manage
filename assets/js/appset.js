@@ -27,9 +27,19 @@ $(function() {
         UP: 1, //上架
         DOWN: 2 //下架
     };
+    /**
+     * 新增
+     * @param  {[type]}
+     * @return {[type]}   [description]
+     */
     $('.ad-uploadify-add').on('click', function() {
         _openUploadDialog();
     });
+    /**
+     * 编辑
+     * @param  {[type]}
+     * @return {[type]}   [description]
+     */
     $('.ad-uploadify-edit').on('click', function() {
         var $li = $(this).closest('li');
         _openUploadDialog($li.attr('data-id'), $li.attr('data-index'), $li.attr('data-imageId'), $li.attr('data-imagePath'));
@@ -55,6 +65,11 @@ $(function() {
             }
         });
     });
+    /**
+     * 上下架
+     * @param  {[type]}
+     * @return {[type]}   [description]
+     */
     $('.ad-uploadify-type').on('click', function() {
         var $this = $(this),
             $li = $this.closest('li'),

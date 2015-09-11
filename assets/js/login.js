@@ -30,10 +30,10 @@ $(function() {
             username: uVal,
             password: pVal
         }).then(function(res) {
-            if (res.code == 200) {
+            if (res.err_code == 0) {
                 location.href = '';
             } else {
-                showErrorMessage(res.message);
+                showErrorMessage(res.err_msg);
                 $password.val('');
             }
         }, function() {

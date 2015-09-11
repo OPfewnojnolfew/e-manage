@@ -21,6 +21,13 @@ $(function() {
      * @return {[type]}   [description]
      */
     $('.J_submit').on('click', function() {
+        var $websiteTitle = $('#website-title'),
+            websiteTitle = $.trim($websiteTitle.trim());
+        if (!websiteTitle) {
+            notify.warn('网站标题不能为空');
+            $websiteTitle.focus();
+            return;
+        }
         var message = imageUploadifyFore.get();
         if (message && (message = message.errorMessage)) {
             notify.warn(message);
@@ -33,7 +40,7 @@ $(function() {
         }
         $('.J_form').ajaxSubmit({
             success: function(res) {
-                if (res.code == 200) {
+                if (res.err_code == 0) {
                     notify.success(t + '成功');
                     location.href = '';
                 } else {
