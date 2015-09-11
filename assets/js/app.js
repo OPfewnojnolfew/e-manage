@@ -62,7 +62,7 @@
             }, {
                 name: '商品管理',
                 href: '车辆管理-商品管理.html',
-                iconClass: 'iconfont icon-guanliyuan'
+                iconClass: 'iconfont icon-shangpinguanli'
             }, {
                 name: '订单管理',
                 href: '车辆管理-订单管理.html',
@@ -70,15 +70,11 @@
             }, {
                 name: '消息推送',
                 href: '车辆管理-消息推送.html',
-                iconClass: 'iconfont icon-guanliyuan'
+                iconClass: 'iconfont icon-zhengguiicon40'
             }, {
-                name: 'app引导页设置',
-                href: '车辆管理-app引导页设置.html',
-                iconClass: 'iconfont icon-xinshouyindao'
-            }, {
-                name: 'app幻灯片设置',
-                href: '车辆管理-app幻灯片设置.html',
-                iconClass: 'iconfont icon-huandengpian'
+                name: 'APP设置',
+                href: '车辆管理-APP设置.html',
+                iconClass: 'iconfont icon-app'
             }]
         }, {
             name: '异常情况列表',
@@ -114,9 +110,9 @@
                 href: '加气站管理-对账设置.html',
                 iconClass: 'iconfont icon-zhangben'
             }, {
-                name: 'app幻灯片设置',
-                href: '加气站管理-app幻灯片设置.html',
-                iconClass: 'iconfont icon-huandengpian'
+                name: 'APP设置',
+                href: '加气站管理-APP设置.html',
+                iconClass: 'iconfont icon-app'
             }]
         }, {
             name: '广告管理',
@@ -127,7 +123,7 @@
             children: [{
                 name: '广告审核',
                 href: '广告管理-广告审核.html',
-                iconClass: 'iconfont icon-pinpai'
+                iconClass: 'iconfont icon-shenhe'
             }, {
                 name: '全站广告',
                 href: '广告管理-全站广告.html',
