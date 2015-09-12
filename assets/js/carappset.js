@@ -72,7 +72,7 @@ $(function() {
      * @param  {[type]}
      * @return {[type]}   [description]
      */
-    $('.J_guide-edit').on('click', function() {
+    $('.J_guide_edit').on('click', function() {
         $modalTitle.text('编辑引导页');
         var $li = $(this).closest('li');
         _openUploadDialog(URLS.GUIDEEDIT, $li.attr('data-id'), $li.attr('data-index'), $li.attr('data-imageId'), $li.attr('data-imagePath'));
@@ -91,7 +91,7 @@ $(function() {
      * @param  {[type]}
      * @return {[type]}   [description]
      */
-    $('.J_slide-edit').on('click', function() {
+    $('.J_slide_edit').on('click', function() {
         $modalTitle.text('编辑幻灯片');
         var $li = $(this).closest('li');
         _openUploadDialog(URLS.SLIDEEDIT, $li.attr('data-id'), $li.attr('data-index'), $li.attr('data-imageId'), $li.attr('data-imagePath'));
@@ -101,7 +101,7 @@ $(function() {
      * @param  {[type]}
      * @return {[type]}   [description]
      */
-    $('.J_guide-type').on('click', function() {
+    $('.J_guide_downup').on('click', function() {
         _downOrUp($(this), URLS.GUIDEDOWNUP);
     });
     /**
@@ -109,7 +109,7 @@ $(function() {
      * @param  {[type]}
      * @return {[type]}   [description]
      */
-    $('.J_slide-type').on('click', function() {
+    $('.J_slide_downup').on('click', function() {
         _downOrUp($(this), URLS.SLIDEDOWNUP);
     });
     /**

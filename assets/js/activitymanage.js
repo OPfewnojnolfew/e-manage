@@ -29,14 +29,6 @@ $(function() {
                 onCancel: function() {}
             });
         };
-    var imageUploadify = $('.J_upload_container').imageUploadify({
-        previewWidth: 120,
-        previewHeight: 80,
-        fieldFormat: {
-            uploadedImageId: 'yourselfiamgeid',
-            uploadedImagePath: 'yourselfiamgesrc'
-        }
-    });
     /**
      * 单条删除
      * @param  {[type]} 
@@ -64,6 +56,15 @@ $(function() {
             location.href = location.href;
         });
     });
+    var $imageUploadify = $('.J_upload_container'),
+        imageUploadify = $imageUploadify.length&& $('.J_upload_container').imageUploadify({
+            previewWidth: 120,
+            previewHeight: 80,
+            fieldFormat: {
+                uploadedImageId: 'yourselfiamgeid',
+                uploadedImagePath: 'yourselfiamgesrc'
+            }
+        });
     /**
      * 提交
      * @param  {[type]} 

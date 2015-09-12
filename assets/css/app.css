@@ -22,12 +22,14 @@
 .icon-tingyong:before { content: "\e600"; }
 .icon-zhangben:before { content: "\e601"; }
 .icon-unie677:before { content: "\e602"; }
+.icon-11:before { content: "\e61f"; }
 .icon-quanxian:before { content: "\e603"; }
 .icon-fenxiang:before { content: "\e604"; }
 .icon-iconfonticonfonttianmaoyoujirenzheng2:before { content: "\e605"; }
 .icon-shenhe:before { content: "\e606"; }
 .icon-yifahuo:before { content: "\e617"; }
 .icon-jifen:before { content: "\e607"; }
+.icon-chang:before { content: "\e620"; }
 .icon-app:before { content: "\e61c"; }
 .icon-huandengpian:before { content: "\e608"; }
 .icon-yichang:before { content: "\e609"; }
@@ -41,11 +43,13 @@
 .icon-jiayouzhan:before { content: "\e60e"; }
 .icon-guanggaoguanli:before { content: "\e60f"; }
 .icon-zixun:before { content: "\e610"; }
+.icon-guzhu:before { content: "\e61e"; }
 .icon-dingdanguanli:before { content: "\e611"; }
 .icon-liulanliang:before { content: "\e619"; }
 .icon-xinshouyindao:before { content: "\e612"; }
 .icon-qiyonguenable:before { content: "\e613"; }
 .icon-icon:before { content: "\e614"; }
+.icon-jia:before { content: "\e61d"; }
 .icon-icon12:before { content: "\e615"; }
 
 .notify {

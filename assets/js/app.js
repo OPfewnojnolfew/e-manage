@@ -42,7 +42,7 @@
             }, {
                 name: '车主管理',
                 href: '车辆管理-车主管理-服务中.html',
-                iconClass: 'iconfont icon-weishimingrenzheng'
+                iconClass: 'iconfont icon-guzhu'
             }, {
                 name: '充值记录',
                 href: '车辆管理-充值记录.html',
@@ -114,6 +114,12 @@
                 href: '加气站管理-APP设置.html',
                 iconClass: 'iconfont icon-app'
             }]
+        }, {
+            name: 'LNG厂管理',
+            pinyinName: 'lngchang',
+            href: 'LNG厂管理.html',
+            active: false,
+            iconClass: 'iconfont icon-chang'
         }, {
             name: '广告管理',
             pinyinName: 'guanggaoguanli',
