@@ -10,6 +10,7 @@
      * @return {[type]} [description]
      */
     (function() {
+        return
         var menuData = [{
             name: '帐号管理',
             pinyinName: 'zhanghaoguanli',
@@ -18,14 +19,17 @@
             active: false,
             children: [{
                 name: '使用中帐号',
+                active: false,
                 href: '账户管理-使用中帐号.html',
                 iconClass: 'iconfont icon-qiyonguenable'
             }, {
                 name: '停用中帐号',
+                active: false,
                 href: '账户管理-停用中帐号.html',
                 iconClass: 'iconfont icon-tingyong'
             }, {
                 name: '模板权限',
+                active: false,
                 href: '账户管理-模板权限.html',
                 iconClass: 'iconfont icon-quanxian'
             }]
@@ -34,7 +38,7 @@
             pinyinName: 'cheliangguanli',
             href: '#',
             iconClass: 'iconfont icon-icon14',
-            active: true,
+            active: false,
             children: [{
                 name: '司机管理',
                 href: '车辆管理-司机管理-服务中.html',
@@ -124,7 +128,7 @@
             name: '广告管理',
             pinyinName: 'guanggaoguanli',
             href: '#',
-            active: false,
+            active: true,
             iconClass: 'iconfont icon-guanggaoguanli',
             children: [{
                 name: '广告审核',

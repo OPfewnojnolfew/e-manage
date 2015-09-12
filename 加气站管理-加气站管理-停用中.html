@@ -41,7 +41,49 @@
     <div class="am-cf admin-main">
         <!-- sidebar start -->
         <div class="J_menu admin-sidebar am-offcanvas" id="admin-offcanvas">
-            <div class="am-offcanvas-bar admin-offcanvas-bar"></div>
+            <div class="am-offcanvas-bar admin-offcanvas-bar">
+                <ul class="am-list admin-sidebar-list">
+                    <li class="admin-parent"><a class="am-cf" data-am-collapse="{target: '#collapse-nav-zhanghaoguanli'}"><span class="iconfont icon-zhanghaoleixingguanli"></span> 帐号管理 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+                        <ul class="am-list admin-sidebar-sub am-collapse" id="collapse-nav-zhanghaoguanli">
+                            <li><a class="" href="账户管理-使用中帐号.html"><span class="iconfont icon-qiyonguenable"></span> 使用中帐号</a></li>
+                            <li><a class="" href="账户管理-停用中帐号.html"><span class="iconfont icon-tingyong"></span> 停用中帐号</a></li>
+                            <li><a class="" href="账户管理-模板权限.html"><span class="iconfont icon-quanxian"></span> 模板权限</a></li>
+                        </ul>
+                    </li>
+                    <li class="admin-parent"><a class="am-cf" data-am-collapse="{target: '#collapse-nav-cheliangguanli'}"><span class="iconfont icon-icon14"></span> 车辆管理 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+                        <ul class="am-list admin-sidebar-sub am-collapse" id="collapse-nav-cheliangguanli">
+                            <li><a class="" href="车辆管理-司机管理-服务中.html"><span class="iconfont icon-icon"></span> 司机管理</a></li>
+                            <li><a class="" href="车辆管理-车主管理-服务中.html"><span class="iconfont icon-guzhu"></span> 车主管理</a></li>
+                            <li><a class="" href="车辆管理-充值记录.html"><span class="iconfont icon-chongzhi"></span> 充值记录</a></li>
+                            <li><a class="" href="车辆管理-消费记录.html"><span class="iconfont icon-icon12"></span> 消费记录</a></li>
+                            <li><a class="" href="车辆管理-返现积分设置.html"><span class="iconfont icon-iconfonticonfonttianmaoyoujirenzheng2"></span> 返现/积分设置</a></li>
+                            <li><a class="" href="车辆管理-活动管理.html"><span class="iconfont icon-flag"></span> 活动管理</a></li>
+                            <li><a class="" href="车辆管理-商品管理.html"><span class="iconfont icon-shangpinguanli"></span> 商品管理</a></li>
+                            <li><a class="" href="车辆管理-订单管理.html"><span class="iconfont icon-dingdanguanli"></span> 订单管理</a></li>
+                            <li><a class="" href="车辆管理-消息推送.html"><span class="iconfont icon-zhengguiicon40"></span> 消息推送</a></li>
+                            <li><a class="" href="车辆管理-APP设置.html"><span class="iconfont icon-app"></span> APP设置</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="异常情况列表.html"><span class="iconfont icon-yichang"></span> 异常情况列表</a></li>
+                    <li><a href="资讯管理.html"><span class="iconfont icon-zixun"></span> 资讯管理</a></li>
+                    <li><a href="分享设置.html"><span class="iconfont icon-fenxiang"></span> 分享设置</a></li>
+                    <li class="admin-parent"><a class="am-cf" data-am-collapse="{target: '#collapse-nav-jiaqizhanguanli'}"><span class="iconfont icon-jiayouzhan"></span> 加气站管理 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+                        <ul class="am-list admin-sidebar-sub am-collapse am-in " id="collapse-nav-jiaqizhanguanli">
+                            <li><a class="active" href="加气站管理-加气站管理-服务中.html"><span class="iconfont icon-jiayouzhan"></span> 加气站管理</a></li>
+                            <li><a class="" href="加气站管理-订单管理-已处理.html"><span class="iconfont icon-dingdanguanli"></span> 订单管理</a></li>
+                            <li><a class="" href="加气站管理-对账设置.html"><span class="iconfont icon-zhangben"></span> 对账设置</a></li>
+                            <li><a class="" href="加气站管理-APP设置.html"><span class="iconfont icon-app"></span> APP设置</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="LNG厂管理.html"><span class="iconfont icon-chang"></span> LNG厂管理</a></li>
+                    <li class="admin-parent"><a class="am-cf" data-am-collapse="{target: '#collapse-nav-guanggaoguanli'}"><span class="iconfont icon-guanggaoguanli"></span> 广告管理 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+                        <ul class="am-list admin-sidebar-sub am-collapse" id="collapse-nav-guanggaoguanli">
+                            <li><a class="" href="广告管理-广告审核.html"><span class="iconfont icon-shenhe"></span> 广告审核</a></li>
+                            <li><a class="" href="广告管理-全站广告.html"><span class="iconfont icon-unie677"></span> 全站广告</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
         <!-- sidebar end -->
         <!-- content start -->
@@ -95,17 +137,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr data-id="1">
+                            <tr data-id="1" data-lon="108.91074371337886" data-lat="34.19657707214354">
                                 <td>龙首村加气站</td>
                                 <td>18691954193</td>
-                                <td>龙首北路西段<a href="javascript:void(0)" class="">查看</a></td>
+                                <td>龙首北路西段<a href="javascript:void(0)" class="J_viewPosition">查看</a></td>
                                 <td class="table-datetime">2014-12-12 12:12:12</td>
                                 <td>qqq@www.com</td>
-                                <td><a href="javascript:void(0)">查看</a></td>
-                                <td><a href="车辆管理-某车主司机充值.html">查看</a></td>
-                                <td><a href="车辆管理-某车主司机充值.html">查看</a></td>
-                                <td><a href="车辆管理-某车主司机消费.html">查看</a></td>
-                                <td><a href="车辆管理-广告位.html">查看</a></td>
+                                <td><a href="加气站管理-加气站管理-责任人.html">查看</a></td>
+                                <td><a href="加气站管理-加气站管理-订单记录.html">查看</a></td>
+                                <td><a href="加气站管理-加气站管理-充值记录.html">查看</a></td>
+                                <td><a href="加气站管理-加气站管理-消费记录.html">查看</a></td>
+                                <td><a href="广告管理-广告审核-某个加气站审核.html">查看</a></td>
                                 <td width="245">
                                     <div class="am-btn-toolbar">
                                         <div class="am-btn-group am-btn-group-xs">
@@ -148,6 +190,16 @@
             </div>
         </div>
     </div>
+    <div class="J_position_modal am-modal am-modal-no-btn" tabindex="-1" id="doc-modal-1">
+        <div class="am-modal-dialog">
+            <div class="am-modal-hd am-text-left">地理位置
+                <a href="javascript: void(0)" class="am-close" data-am-modal-close>&times;</a>
+            </div>
+            <div class="am-modal-bd">
+                <div id="positionarea" style="width: 100%; height: 400px;"></div>
+            </div>
+        </div>
+    </div>
     <footer>
         <hr>
         <p class="am-padding-left">&copy;&nbsp;E站途管理中心&nbsp;&nbsp;&nbsp;&nbsp;全程技术支持：
@@ -166,6 +218,7 @@
     <script src="assets/js/datetimepicker/js/amazeui.datetimepicker.min.js"></script>
     <script src="assets/js/datetimepicker/js/locales/amazeui.datetimepicker.zh-CN.js"></script>
     <script src="assets/js/app.js"></script>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=WVAXZ05oyNRXS5egLImmentg"></script>
     <script src="assets/js/gasmanage.js"></script>
 </body>
 

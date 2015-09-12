@@ -1,0 +1,79 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>E站途管理中心</title>
+    <meta name="description" content="E站途管理中心">
+    <meta name="keywords" content="table">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="stylesheet" href="assets/css/amazeui.min.css" />
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+<![endif]-->
+    <header class="am-topbar admin-header">
+        <div class="admin-logo">
+            <a href="#" class="logo"></a>
+            <a href="#" class="admin-header-title">E站途管理中心</a>
+        </div>
+        <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+        <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+            <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
+                <li class="admin-header-user"><a href="javascript:;"><span class="iconfont icon-person"></span> <span>15958093225</span></a></li>
+                <li><span class="split"></span></li>
+                <li class="admin-header-exit am-hide-sm-only"><a href="javascript:;"><span class="am-icon-sign-out"></span> <span class="admin-fullText">退出</span></a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="am-g">
+        <div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
+            <div class="am-margin e-countdown"><span class="am-text-danger">操作成功！</span>系统将在<em data-href="">5秒</em>后自动跳转到xx页，您还可以<a href="#">点击这里</a>直接跳转</div>
+        </div>
+    </div>
+    <footer>
+        <hr>
+        <p class="am-padding-left">&copy;&nbsp;E站途管理中心&nbsp;&nbsp;&nbsp;&nbsp;全程技术支持：
+            <a href="http://yufukeji.com/" target="_blank">渔夫科技</a>
+        </p>
+    </footer>
+    <!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="assets/js/jquery.min.js"></script>
+    <!--<![endif]-->
+    <script src="assets/js/amazeui.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var $em = $('.e-countdown em'),
+            downSecond = 5;
+        var countdown = function() {
+            downSecond -= 1;
+            if (downSecond > 0) {
+                setTimeout(countdown, 1000);
+                $em.text(downSecond + '秒');
+            } else {
+                location.href = $em.attr('data-href');
+            }
+        };
+        $em.length && setTimeout(countdown, 1000);
+    });
+    </script>
+</body>
+
+</html>

@@ -22,7 +22,7 @@ $(function() {
      */
     $('.J_submit').on('click', function() {
         var $websiteTitle = $('#website-title'),
-            websiteTitle = $.trim($websiteTitle.trim());
+            websiteTitle = $.trim($websiteTitle.val());
         if (!websiteTitle) {
             notify.warn('网站标题不能为空');
             $websiteTitle.focus();

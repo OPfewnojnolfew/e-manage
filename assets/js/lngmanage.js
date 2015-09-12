@@ -56,22 +56,27 @@ $(function() {
             location.href = location.href;
         });
     });
+    var $geo = $('.J_geo');
+    $geo.length && $geo.geo({
+        checked: function(a, b) {
+            // $searchForm.submit();
+        }
+    });
     /**
      * 提交
      * @param  {[type]} 
      * @return {[type]}   [description]
      */
     $('.J_submit').on('click', function() {
-        // var $title = $('#activity-title'),
-        //     $id = $('#activity_id'),
-        //     id = $id.val(),
-        //     t = id ? '编辑' : '添加',
-        //     title = $.trim($title.val());
-        // if (title === '') {
-        //     notify.warn('标题不能为空!');
-        //     $title.focus();
-        //     return;
-        // }
+        var id = $('#lng_id').val(),
+            t = id ? '编辑' : '新增',
+            $lngName = $('#lng-name'),
+            lngName = $.trim($lngName.val());
+        if (lngName === '') {
+            notify.warn('名称不能为空');
+            $lngName.focus();
+            return;
+        }
         $('.J_form').ajaxSubmit({
             success: function(res) {
                 if (res.err_code == 0) {

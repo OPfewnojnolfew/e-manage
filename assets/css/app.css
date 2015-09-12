@@ -316,3 +316,19 @@ hr {
     border-bottom: 1px solid #ccc;
     font-weight: 700
 }
+
+.e-countdown {
+    color: #888;
+    line-height: 1.5;
+}
+
+.e-countdown em {
+    margin: 0 3px;
+    color: #b47227;
+    font-style: normal;
+}
+
+.e-countdown a {
+    color: #b47227;
+    margin: 0 3px;
+}

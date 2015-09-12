@@ -81,11 +81,6 @@ $(function() {
                 onCancel: function() {}
             });
         };
-    $('.J_geo').geo({
-        checked: function(a, b) {
-            // $searchForm.submit();
-        }
-    });
     /**
      * 单条禁用
      * @param  {[type]} 
@@ -124,36 +119,29 @@ $(function() {
         resetPassword(id);
     });
     /**
-     * 提交编辑新增加气站
-     * @param  {[type]} 
-     * @return {[type]}   [description]
+     * 地理位置
      */
-    $('.J_submit').on('click', function() {
-        var id = $('#gas_id').val(),
-            t = id ? '编辑' : '新增',
-            $gasMail = $('#gas-email'),
-            gasMail = $.trim($gasMail.val()),
-            $gasName = $('#gas-name'),
-            gasName = $.trim($gasName.val());
-        if (gasMail === '') {
-            notify.warn('邮箱不能为空');
-            $gasMail.focus();
+    var marker,
+        map = new BMap.Map('positionarea');
+    _addPoint = function(lon, lat) {
+        marker && map.removeOverlay(marker);
+        if (!lon || !lat) {
             return;
         }
-        if (gasName === '') {
-            notify.warn('名称不能为空');
-            $gasName.focus();
-            return;
-        }
-        $('.J_form').ajaxSubmit({
-            success: function(res) {
-                if (res.err_code == 0) {
-                    notify.success(t + '成功');
-                    location.href = '';
-                } else {
-                    notify.warn(t + '失败');
-                }
-            }
-        });
+        var point = new BMap.Point(+lon, +lat);
+        map.centerAndZoom(point, 15);
+        map.addControl(new BMap.MapTypeControl());
+        map.enableScrollWheelZoom(true);
+        marker = new BMap.Marker(point); // 创建标注
+        map.addOverlay(marker); // 将标注添加到地图中
+        map.panTo(point);
+    };
+    $('.J_viewPosition').on('click', function() {
+        var $this = $(this),
+            $tr = $this.closest('tr'),
+            lon = $tr.attr('data-lon'),
+            lat = $tr.attr('data-lat');
+        $('.J_position_modal').modal();
+        _addPoint(lon, lat);
     });
 });

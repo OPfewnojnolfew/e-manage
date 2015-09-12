@@ -41,13 +41,55 @@
     <div class="am-cf admin-main">
         <!-- sidebar start -->
         <div class="J_menu admin-sidebar am-offcanvas" id="admin-offcanvas">
-            <div class="am-offcanvas-bar admin-offcanvas-bar"></div>
+            <div class="am-offcanvas-bar admin-offcanvas-bar">
+                <ul class="am-list admin-sidebar-list">
+                    <li class="admin-parent"><a class="am-cf" data-am-collapse="{target: '#collapse-nav-zhanghaoguanli'}"><span class="iconfont icon-zhanghaoleixingguanli"></span> 帐号管理 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+                        <ul class="am-list admin-sidebar-sub am-collapse am-in " id="collapse-nav-zhanghaoguanli">
+                            <li><a class="" href="账户管理-使用中帐号.html"><span class="iconfont icon-qiyonguenable"></span> 使用中帐号</a></li>
+                            <li><a class="" href="账户管理-停用中帐号.html"><span class="iconfont icon-tingyong"></span> 停用中帐号</a></li>
+                            <li><a class="active" href="账户管理-模板权限.html"><span class="iconfont icon-quanxian"></span> 模板权限</a></li>
+                        </ul>
+                    </li>
+                    <li class="admin-parent"><a class="am-cf" data-am-collapse="{target: '#collapse-nav-cheliangguanli'}"><span class="iconfont icon-icon14"></span> 车辆管理 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+                        <ul class="am-list admin-sidebar-sub am-collapse" id="collapse-nav-cheliangguanli">
+                            <li><a class="" href="车辆管理-司机管理-服务中.html"><span class="iconfont icon-icon"></span> 司机管理</a></li>
+                            <li><a class="" href="车辆管理-车主管理-服务中.html"><span class="iconfont icon-guzhu"></span> 车主管理</a></li>
+                            <li><a class="" href="车辆管理-充值记录.html"><span class="iconfont icon-chongzhi"></span> 充值记录</a></li>
+                            <li><a class="" href="车辆管理-消费记录.html"><span class="iconfont icon-icon12"></span> 消费记录</a></li>
+                            <li><a class="" href="车辆管理-返现积分设置.html"><span class="iconfont icon-iconfonticonfonttianmaoyoujirenzheng2"></span> 返现/积分设置</a></li>
+                            <li><a class="" href="车辆管理-活动管理.html"><span class="iconfont icon-flag"></span> 活动管理</a></li>
+                            <li><a class="" href="车辆管理-商品管理.html"><span class="iconfont icon-shangpinguanli"></span> 商品管理</a></li>
+                            <li><a class="" href="车辆管理-订单管理.html"><span class="iconfont icon-dingdanguanli"></span> 订单管理</a></li>
+                            <li><a class="" href="车辆管理-消息推送.html"><span class="iconfont icon-zhengguiicon40"></span> 消息推送</a></li>
+                            <li><a class="" href="车辆管理-APP设置.html"><span class="iconfont icon-app"></span> APP设置</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="异常情况列表.html"><span class="iconfont icon-yichang"></span> 异常情况列表</a></li>
+                    <li><a href="资讯管理.html"><span class="iconfont icon-zixun"></span> 资讯管理</a></li>
+                    <li><a href="分享设置.html"><span class="iconfont icon-fenxiang"></span> 分享设置</a></li>
+                    <li class="admin-parent"><a class="am-cf" data-am-collapse="{target: '#collapse-nav-jiaqizhanguanli'}"><span class="iconfont icon-jiayouzhan"></span> 加气站管理 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+                        <ul class="am-list admin-sidebar-sub am-collapse" id="collapse-nav-jiaqizhanguanli">
+                            <li><a class="" href="加气站管理-加气站管理-服务中.html"><span class="iconfont icon-jiayouzhan"></span> 加气站管理</a></li>
+                            <li><a class="" href="加气站管理-订单管理-已处理.html"><span class="iconfont icon-dingdanguanli"></span> 订单管理</a></li>
+                            <li><a class="" href="加气站管理-对账设置.html"><span class="iconfont icon-zhangben"></span> 对账设置</a></li>
+                            <li><a class="" href="加气站管理-APP设置.html"><span class="iconfont icon-app"></span> APP设置</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="LNG厂管理.html"><span class="iconfont icon-chang"></span> LNG厂管理</a></li>
+                    <li class="admin-parent"><a class="am-cf" data-am-collapse="{target: '#collapse-nav-guanggaoguanli'}"><span class="iconfont icon-guanggaoguanli"></span> 广告管理 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+                        <ul class="am-list admin-sidebar-sub am-collapse" id="collapse-nav-guanggaoguanli">
+                            <li><a class="" href="广告管理-广告审核.html"><span class="iconfont icon-shenhe"></span> 广告审核</a></li>
+                            <li><a class="" href="广告管理-全站广告.html"><span class="iconfont icon-unie677"></span> 全站广告</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
         <!-- sidebar end -->
         <!-- content start -->
         <div class="admin-content">
             <div class="am-cf am-padding">
-                <div class="am-fl am-cf"><strong class="am-text-lg">帐号管理</strong> / <small class="am-text-primary">权限模板</small></div>
+                <div class="am-fl am-cf"><strong class="am-text-lg">帐号管理</strong> / <small class="am-text-primary">模板权限</small></div>
             </div>
             <form class="am-form am-form-inline am-margin-left am-margin-right" method="get" action="">
                 <input type="hidden" name="pageIndex" value="0" />
@@ -56,7 +98,7 @@
                     <input type="text" name="name" class="am-input-sm" placeholder="模板名称">
                 </div>
                 <button class="J_search am-btn am-btn-primary am-btn-sm" type="submit"><i class="am-icon-search"></i> 查询</button>
-                <a href="账户管理-新增编辑权限模板.html" class="am-btn am-btn-success am-btn-sm" type="submit"><i class="am-icon-plus"></i> 添加模板</a>
+                <a href="账户管理-新增编辑模板权限.html" class="am-btn am-btn-success am-btn-sm" type="submit"><i class="am-icon-plus"></i> 添加模板</a>
             </form>
             <hr>
             <div class="am-g">
@@ -82,7 +124,7 @@
                                 <td width="150">
                                     <div class="am-btn-toolbar">
                                         <div class="am-btn-group am-btn-group-xs">
-                                            <a href="账户管理-新增编辑权限模板.html" class="J_edit table-btn am-btn am-btn-default am-btn-xs am-text-primary"><span class="am-icon-edit"></span> 编辑</a>
+                                            <a href="账户管理-新增编辑模板权限.html" class="J_edit table-btn am-btn am-btn-default am-btn-xs am-text-primary"><span class="am-icon-edit"></span> 编辑</a>
                                             <button class="J_single_del am-btn am-btn-default am-btn-xs am-text-danger"><span class="am-icon-trash-o"></span> 删除</button>
                                         </div>
                                     </div>
@@ -118,7 +160,7 @@
     <a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
     <div class="J_confirm am-modal am-modal-confirm" tabindex="-1" id="my-confirm">
         <div class="am-modal-dialog">
-            <div class="am-modal-hd">权限模板</div>
+            <div class="am-modal-hd">模板权限</div>
             <div class="am-modal-bd">
             </div>
             <div class="am-modal-footer">

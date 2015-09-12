@@ -93,7 +93,7 @@ $(function() {
                 notify.warn('未选择任何项');
                 return;
             }
-            $confirmModalContent.text('确定删除选中的权限模板吗?');
+            $confirmModalContent.text('确定删除选中的模板权限吗?');
             $('.J_confirm').modal({
                 onConfirm: function(options) {
                     $.post('', {
@@ -162,7 +162,14 @@ $(function() {
         var $useremail = $('#user-email'),
             id = $('#user_id').val(),
             t = id ? '编辑' : '新增',
-            useremail = $.trim($useremail.val());
+            useremail = $.trim($useremail.val()),
+            $username = $('#user-name'),
+            username = $.trim($username.val());
+        if (!username) {
+            notify.warn('用户名不能为空');
+            $username.focus();
+            return;
+        }
         if (!(/^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/.test(useremail) && useremail.length)) {
             notify.warn('邮箱格式不正确！');
             $useremail.focus();
@@ -208,7 +215,7 @@ $(function() {
         });
     });
     /**
-     * 提交编辑新增权限模板
+     * 提交编辑新增模板权限
      * @param  {[type]} 
      * @return {[type]}   [description]
      */
