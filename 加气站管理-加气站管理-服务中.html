@@ -91,88 +91,90 @@
             <div class="am-cf am-padding">
                 <div class="am-fl am-cf"><strong class="am-text-lg">加气站管理</strong> / <small class="am-text-primary">加气站管理</small></div>
             </div>
-            <form class="am-form am-form-inline am-margin-left am-margin-right" method="get" action="">
-                <input type="hidden" name="pageIndex" value="0" />
-                <input type="hidden" name="pageSize" value="20" />
-                <div class="am-form-group">
-                    <input type="text" name="gasname" class="am-input-sm" placeholder="加气站名称/邮箱/电话">
-                </div>
-                <div class="am-form-group">
-                    <select name="gasaddress" class="J_select am-form-select am-input-sm e-select-sm">
-                        <option value="0">-请选择-</option>
-                        <option>西安</option>
-                        <option>北京</option>
-                        <option>成都</option>
-                        <option>沈阳</option>
-                    </select>
-                </div>
-                <div class="am-form-group am-form-icon">
-                    <i class="am-icon-calendar"></i>
-                    <input type="text" name="addtime" class="J_datetime am-input-sm am-form-field" data-provide="datetimepicker-inline" placeholder="添加时间" data-date-format="yyyy-mm-dd hh:ii" data-date-language="zh-CN" data-date-autoclose="1" readonly>
-                </div>
-                <button class="J_search am-btn am-btn-primary am-btn-sm" type="submit"><i class="am-icon-search"></i> 查询</button>
-                <a href="加气站管理-加气站管理-新增编辑加气站.html" class="am-btn am-btn-success am-btn-sm"><i class="am-icon-plus"></i> 新增加气站</a>
-            </form>
-            <hr>
             <ul class="e-tab am-cf am-margin-left">
                 <li class="active"><a href="加气站管理-加气站管理-服务中.html">服务中（111）</a></li>
                 <li><a href="加气站管理-加气站管理-停用中.html">停用中（12）</a></li>
             </ul>
-            <div class="am-g">
-                <div class="am-u-sm-12">
-                    <table class="am-table am-table-striped am-table-hover table-main">
-                        <thead>
-                            <tr>
-                                <th>加气站名称</th>
-                                <th>电话</th>
-                                <th>地址</th>
-                                <th>添加时间</th>
-                                <th>邮箱</th>
-                                <th>负责人</th>
-                                <th>订单记录</th>
-                                <th>充值记录</th>
-                                <th>消费记录</th>
-                                <th>广告位</th>
-                                <th>操作</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr data-id="1" data-lon="108.91074371337886" data-lat="34.19657707214354">
-                                <td>龙首村加气站</td>
-                                <td>18691954193</td>
-                                <td>龙首北路西段<a href="javascript:void(0)" class="J_viewPosition">查看</a></td>
-                                <td class="table-datetime">2014-12-12 12:12:12</td>
-                                <td>qqq@www.com</td>
-                                <td><a href="加气站管理-加气站管理-责任人.html">查看</a></td>
-                                <td><a href="加气站管理-加气站管理-订单记录.html">查看</a></td>
-                                <td><a href="加气站管理-加气站管理-充值记录.html">查看</a></td>
-                                <td><a href="加气站管理-加气站管理-消费记录.html">查看</a></td>
-                                <td><a href="广告管理-广告审核-某个加气站审核.html">查看</a></td>
-                                <td width="245">
-                                    <div class="am-btn-toolbar">
-                                        <div class="am-btn-group am-btn-group-xs">
-                                            <button class="J_resetPass am-btn am-btn-default am-btn-xs am-text-warning"><span class="am-icon-key"></span> 重置密码</button>
-                                            <a href="加气站管理-加气站管理-新增编辑加气站.html" class="J_edit table-btn am-btn am-btn-default am-btn-xs am-text-primary"><span class="am-icon-edit"></span> 编辑</a>
-                                            <!--            <button class="J_enable am-btn am-btn-default am-btn-xs am-text-success"><span class="am-icon-check-circle-o"></span> 启用</button> -->
-                                            <button class="J_disable am-btn am-btn-default am-btn-xs am-text-danger"><span class="am-icon-ban"></span> 停用</button>
+            <div class="e-tab-container">
+                <form class="am-form am-form-inline am-margin" method="get" action="">
+                    <input type="hidden" name="pageIndex" value="0" />
+                    <input type="hidden" name="pageSize" value="20" />
+                    <div class="am-form-group">
+                        <input type="text" name="gasname" class="am-input-sm" placeholder="加气站名称/邮箱/电话">
+                    </div>
+                    <div class="am-form-group">
+                        <select name="gasaddress" class="J_select am-form-select am-input-sm e-select-sm">
+                            <option value="0">-请选择-</option>
+                            <option>西安</option>
+                            <option>北京</option>
+                            <option>成都</option>
+                            <option>沈阳</option>
+                        </select>
+                    </div>
+                    <div class="am-form-group am-form-icon">
+                        <i class="am-icon-calendar"></i>
+                        <input type="text" name="addtime" class="J_datetime am-input-sm am-form-field" data-provide="datetimepicker-inline" placeholder="添加时间" data-date-format="yyyy-mm-dd hh:ii" data-date-language="zh-CN" data-date-autoclose="1" readonly>
+                    </div>
+                    <button class="J_search am-btn am-btn-primary am-btn-sm" type="submit"><i class="am-icon-search"></i> 查询</button>
+                    <a href="加气站管理-加气站管理-新增编辑加气站.html" class="am-btn am-btn-success am-btn-sm"><i class="am-icon-plus"></i> 新增加气站</a>
+                </form>
+                <hr>
+                <div class="am-g">
+                    <div class="am-u-sm-12">
+                        <table class="am-table am-table-striped am-table-hover table-main">
+                            <thead>
+                                <tr>
+                                    <th>加气站名称</th>
+                                    <th>电话</th>
+                                    <th>地址</th>
+                                    <th>添加时间</th>
+                                    <th>邮箱</th>
+                                    <th>负责人</th>
+                                    <th>订单记录</th>
+                                    <th>充值记录</th>
+                                    <th>消费记录</th>
+                                    <th>广告位</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-id="1" data-lon="108.91074371337886" data-lat="34.19657707214354">
+                                    <td>龙首村加气站</td>
+                                    <td>18691954193</td>
+                                    <td>龙首北路西段<a href="javascript:void(0)" class="J_viewPosition">查看</a></td>
+                                    <td class="table-datetime">2014-12-12 12:12:12</td>
+                                    <td>qqq@www.com</td>
+                                    <td><a href="加气站管理-加气站管理-责任人.html">查看</a></td>
+                                    <td><a href="加气站管理-加气站管理-订单记录.html">查看</a></td>
+                                    <td><a href="加气站管理-加气站管理-充值记录.html">查看</a></td>
+                                    <td><a href="加气站管理-加气站管理-消费记录.html">查看</a></td>
+                                    <td><a href="广告管理-广告审核-某个加气站审核.html">查看</a></td>
+                                    <td width="245">
+                                        <div class="am-btn-toolbar">
+                                            <div class="am-btn-group am-btn-group-xs">
+                                                <button class="J_resetPass am-btn am-btn-default am-btn-xs am-text-warning"><span class="am-icon-key"></span> 重置密码</button>
+                                                <a href="加气站管理-加气站管理-新增编辑加气站.html" class="J_edit table-btn am-btn am-btn-default am-btn-xs am-text-primary"><span class="am-icon-edit"></span> 编辑</a>
+                                                <!--            <button class="J_enable am-btn am-btn-default am-btn-xs am-text-success"><span class="am-icon-check-circle-o"></span> 启用</button> -->
+                                                <button class="J_disable am-btn am-btn-default am-btn-xs am-text-danger"><span class="am-icon-ban"></span> 停用</button>
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="am-cf">
-                        共 15 条记录
-                        <div class="am-fr">
-                            <ul class="am-pagination">
-                                <li class="am-disabled"><a href="#">«</a></li>
-                                <li class="am-active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#">»</a></li>
-                            </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="am-cf">
+                            共 15 条记录
+                            <div class="am-fr">
+                                <ul class="am-pagination">
+                                    <li class="am-disabled"><a href="#">«</a></li>
+                                    <li class="am-active"><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#">»</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>

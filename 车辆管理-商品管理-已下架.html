@@ -90,68 +90,70 @@
             <div class="am-cf am-padding">
                 <div class="am-fl am-cf"><strong class="am-text-lg">车辆管理</strong> / <small class="am-text-primary">商品管理</small></div>
             </div>
-            <form class="am-form am-form-inline am-margin-left am-margin-right" method="get" action="">
-                <input type="hidden" name="pageIndex" value="0" />
-                <input type="hidden" name="pageSize" value="20" />
-                <input type="hidden" name="type" value="1" />
-                <div class="am-form-group">
-                    <input type="text" name="commodityname" class="am-input-sm" placeholder="商品名称">
-                </div>
-                <button class="J_search am-btn am-btn-primary am-btn-sm" type="submit"><i class="am-icon-search"></i> 查询</button>
-                <a href="车辆管理-商品管理-新增编辑商品.html" class="am-btn am-btn-success am-btn-sm"><i class="am-icon-plus"></i> 添加商品</a>
-            </form>
-            <hr>
             <ul class="e-tab am-cf am-margin-left">
                 <li><a href="车辆管理-商品管理.html">所有（111）</a></li>
                 <li><a href="车辆管理-商品管理-出售中.html">出售中（12）</a></li>
                 <li class="active"><a href="车辆管理-商品管理-已下架.html">已下架（12）</a></li>
             </ul>
-            <div class="am-g">
-                <div class="am-u-sm-12">
-                    <table class="am-table am-table-striped am-table-hover table-main">
-                        <thead>
-                            <tr>
-                                <th>商品名称</th>
-                                <th>库存</th>
-                                <th>所需积分</th>
-                                <th>简介</th>
-                                <th>发布时间</th>
-                                <th>状态</th>
-                                <th>操作</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr data-id="1">
-                                <td>手电筒</td>
-                                <td>11</td>
-                                <td>22</td>
-                                <td>手电筒手电筒</td>
-                                <td class="table-datetime">2014-12-12 12:12:12</td>
-                                <td>已下架</td>
-                                <td width="150">
-                                    <div class="am-btn-toolbar">
-                                        <div class="am-btn-group am-btn-group-xs">
-                                            <a href="车辆管理-商品管理-新增编辑商品.html" class="am-btn am-btn-default am-btn-xs am-text-primary"><span class="am-icon-edit"></span> 编辑</a>
-                                            <button class="J_enable am-btn am-btn-default am-btn-xs am-text-success"><span class="am-icon-check-circle-o"></span> 上架</button>
-                                            <!--           <button class="J_disable am-btn am-btn-default am-btn-xs am-text-danger"><span class="am-icon-ban"></span> 下架</button> -->
+            <div class="e-tab-container">
+                <form class="am-form am-form-inline am-margin" method="get" action="">
+                    <input type="hidden" name="pageIndex" value="0" />
+                    <input type="hidden" name="pageSize" value="20" />
+                    <input type="hidden" name="type" value="1" />
+                    <div class="am-form-group">
+                        <input type="text" name="commodityname" class="am-input-sm" placeholder="商品名称">
+                    </div>
+                    <button class="J_search am-btn am-btn-primary am-btn-sm" type="submit"><i class="am-icon-search"></i> 查询</button>
+                    <a href="车辆管理-商品管理-新增编辑商品.html" class="am-btn am-btn-success am-btn-sm"><i class="am-icon-plus"></i> 添加商品</a>
+                </form>
+                <hr>
+                <div class="am-g">
+                    <div class="am-u-sm-12">
+                        <table class="am-table am-table-striped am-table-hover table-main">
+                            <thead>
+                                <tr>
+                                    <th>商品名称</th>
+                                    <th>库存</th>
+                                    <th>所需积分</th>
+                                    <th>简介</th>
+                                    <th>发布时间</th>
+                                    <th>状态</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-id="1">
+                                    <td>手电筒</td>
+                                    <td>11</td>
+                                    <td>22</td>
+                                    <td>手电筒手电筒</td>
+                                    <td class="table-datetime">2014-12-12 12:12:12</td>
+                                    <td>已下架</td>
+                                    <td width="150">
+                                        <div class="am-btn-toolbar">
+                                            <div class="am-btn-group am-btn-group-xs">
+                                                <a href="车辆管理-商品管理-新增编辑商品.html" class="am-btn am-btn-default am-btn-xs am-text-primary"><span class="am-icon-edit"></span> 编辑</a>
+                                                <button class="J_enable am-btn am-btn-default am-btn-xs am-text-success"><span class="am-icon-check-circle-o"></span> 上架</button>
+                                                <!--           <button class="J_disable am-btn am-btn-default am-btn-xs am-text-danger"><span class="am-icon-ban"></span> 下架</button> -->
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="am-cf">
-                        共 15 条记录
-                        <div class="am-fr">
-                            <ul class="am-pagination">
-                                <li class="am-disabled"><a href="#">«</a></li>
-                                <li class="am-active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#">»</a></li>
-                            </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="am-cf">
+                            共 15 条记录
+                            <div class="am-fr">
+                                <ul class="am-pagination">
+                                    <li class="am-disabled"><a href="#">«</a></li>
+                                    <li class="am-active"><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#">»</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>

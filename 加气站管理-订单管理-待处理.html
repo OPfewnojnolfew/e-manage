@@ -91,81 +91,83 @@
             <div class="am-cf am-padding">
                 <div class="am-fl am-cf"><strong class="am-text-lg">加气站管理</strong> / <small class="am-text-primary">订单管理</small></div>
             </div>
-            <form class="am-form am-form-inline am-margin-left am-margin-right" method="get" action="">
-                <input type="hidden" name="pageIndex" value="0" />
-                <input type="hidden" name="pageSize" value="20" />
-                <div class="am-form-group">
-                    <input type="text" name="gasname" class="am-input-sm" placeholder="加气站名称">
-                </div>
-                <div class="am-form-group am-form-icon">
-                    <i class="am-icon-calendar"></i>
-                    <input type="text" name="addtime" class="J_datetime am-input-sm am-form-field" data-provide="datetimepicker-inline" placeholder="添加时间" data-date-format="yyyy-mm-dd hh:ii" data-date-language="zh-CN" data-date-autoclose="1" readonly>
-                </div>
-                <div class="am-form-group">
-                    <select name="ordertype" class="J_select am-form-select am-input-sm e-select-sm">
-                        <option value="0">-请选择-</option>
-                        <option>自提</option>
-                        <option>配送</option>
-                    </select>
-                </div>
-                <button class="J_search am-btn am-btn-primary am-btn-sm" type="submit"><i class="am-icon-search"></i> 查询</button>
-                <button class="J_export am-btn am-btn-warning am-btn-sm"><i class="am-icon-cloud-upload"></i> 导出表格</button>
-            </form>
-            <hr>
             <ul class="e-tab am-cf am-margin-left">
                 <li class="active"><a href="加气站管理-订单管理-待处理.html">待处理（111）</a></li>
                 <li><a href="加气站管理-订单管理-已处理.html">已处理（12）</a></li>
             </ul>
-            <div class="am-g">
-                <div class="am-u-sm-12">
-                    <table class="am-table am-table-striped am-table-hover table-main">
-                        <thead>
-                            <tr>
-                                <th>订单提交时间</th>
-                                <th>类型</th>
-                                <th>需求量</th>
-                                <th>加气站名称</th>
-                                <th>电话</th>
-                                <!-- <th>地址</th> -->
-                                <th>负责人</th>
-                                <th>负责任电话</th>
-                                <th>LGN厂</th>
-                                <th>操作</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr data-id="1">
-                                <td class="table-datetime">2014-12-12 12:12:12</td>
-                                <td>自提</td>
-                                <td>1000kg</td>
-                                <td>龙首村加气站</td>
-                                <td>18691954193</td>
-                                <!-- <td>龙首北路西段<a href="javascript:void(0)" class="">查看</a></td> -->
-                                <td>ACE</td>
-                                <td>11111111111</td>
-                                <td>一场</td>
-                                <td width="100">
-                                    <div class="am-btn-toolbar">
-                                        <div class="am-btn-group am-btn-group-xs">
-                                            <button class="J_deal am-btn am-btn-default am-btn-xs am-text-success"><span class="am-icon-check-circle-o"></span> 处理</button>
+            <div class="e-tab-container">
+                <form class="am-form am-form-inline am-margin" method="get" action="">
+                    <input type="hidden" name="pageIndex" value="0" />
+                    <input type="hidden" name="pageSize" value="20" />
+                    <div class="am-form-group">
+                        <input type="text" name="gasname" class="am-input-sm" placeholder="加气站名称">
+                    </div>
+                    <div class="am-form-group am-form-icon">
+                        <i class="am-icon-calendar"></i>
+                        <input type="text" name="addtime" class="J_datetime am-input-sm am-form-field" data-provide="datetimepicker-inline" placeholder="添加时间" data-date-format="yyyy-mm-dd hh:ii" data-date-language="zh-CN" data-date-autoclose="1" readonly>
+                    </div>
+                    <div class="am-form-group">
+                        <select name="ordertype" class="J_select am-form-select am-input-sm e-select-sm">
+                            <option value="0">-请选择-</option>
+                            <option>自提</option>
+                            <option>配送</option>
+                        </select>
+                    </div>
+                    <button class="J_search am-btn am-btn-primary am-btn-sm" type="submit"><i class="am-icon-search"></i> 查询</button>
+                    <button class="J_export am-btn am-btn-warning am-btn-sm"><i class="am-icon-cloud-upload"></i> 导出表格</button>
+                </form>
+                <hr>
+                <div class="am-g">
+                    <div class="am-u-sm-12">
+                        <table class="am-table am-table-striped am-table-hover table-main">
+                            <thead>
+                                <tr>
+                                    <th>订单提交时间</th>
+                                    <th>类型</th>
+                                    <th>需求量</th>
+                                    <th>加气站名称</th>
+                                    <th>电话</th>
+                                    <!-- <th>地址</th> -->
+                                    <th>负责人</th>
+                                    <th>负责任电话</th>
+                                    <th>LGN厂</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-id="1">
+                                    <td class="table-datetime">2014-12-12 12:12:12</td>
+                                    <td>自提</td>
+                                    <td>1000kg</td>
+                                    <td>龙首村加气站</td>
+                                    <td>18691954193</td>
+                                    <!-- <td>龙首北路西段<a href="javascript:void(0)" class="">查看</a></td> -->
+                                    <td>ACE</td>
+                                    <td>11111111111</td>
+                                    <td>一场</td>
+                                    <td width="100">
+                                        <div class="am-btn-toolbar">
+                                            <div class="am-btn-group am-btn-group-xs">
+                                                <button class="J_deal am-btn am-btn-default am-btn-xs am-text-success"><span class="am-icon-check-circle-o"></span> 处理</button>
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="am-cf">
-                        共 15 条记录
-                        <div class="am-fr">
-                            <ul class="am-pagination">
-                                <li class="am-disabled"><a href="#">«</a></li>
-                                <li class="am-active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#">»</a></li>
-                            </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="am-cf">
+                            共 15 条记录
+                            <div class="am-fr">
+                                <ul class="am-pagination">
+                                    <li class="am-disabled"><a href="#">«</a></li>
+                                    <li class="am-active"><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#">»</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>

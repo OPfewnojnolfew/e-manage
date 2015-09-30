@@ -18,39 +18,137 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-gouwuche:before { content: "\e616"; }
-.icon-tingyong:before { content: "\e600"; }
-.icon-zhangben:before { content: "\e601"; }
-.icon-unie677:before { content: "\e602"; }
-.icon-11:before { content: "\e61f"; }
-.icon-quanxian:before { content: "\e603"; }
-.icon-fenxiang:before { content: "\e604"; }
-.icon-iconfonticonfonttianmaoyoujirenzheng2:before { content: "\e605"; }
-.icon-shenhe:before { content: "\e606"; }
-.icon-yifahuo:before { content: "\e617"; }
-.icon-jifen:before { content: "\e607"; }
-.icon-chang:before { content: "\e620"; }
-.icon-app:before { content: "\e61c"; }
-.icon-huandengpian:before { content: "\e608"; }
-.icon-yichang:before { content: "\e609"; }
-.icon-icon14:before { content: "\e60a"; }
-.icon-zhanghaoleixingguanli:before { content: "\e60b"; }
-.icon-chongzhi:before { content: "\e60c"; }
-.icon-yifahuo1:before { content: "\e618"; }
-.icon-shangpinguanli:before { content: "\e61a"; }
-.icon-flag:before { content: "\e60d"; }
-.icon-zhengguiicon40:before { content: "\e61b"; }
-.icon-jiayouzhan:before { content: "\e60e"; }
-.icon-guanggaoguanli:before { content: "\e60f"; }
-.icon-zixun:before { content: "\e610"; }
-.icon-guzhu:before { content: "\e61e"; }
-.icon-dingdanguanli:before { content: "\e611"; }
-.icon-liulanliang:before { content: "\e619"; }
-.icon-xinshouyindao:before { content: "\e612"; }
-.icon-qiyonguenable:before { content: "\e613"; }
-.icon-icon:before { content: "\e614"; }
-.icon-jia:before { content: "\e61d"; }
-.icon-icon12:before { content: "\e615"; }
+.icon-gouwuche:before {
+    content: "\e616";
+}
+
+.icon-tingyong:before {
+    content: "\e600";
+}
+
+.icon-zhangben:before {
+    content: "\e601";
+}
+
+.icon-unie677:before {
+    content: "\e602";
+}
+
+.icon-11:before {
+    content: "\e61f";
+}
+
+.icon-quanxian:before {
+    content: "\e603";
+}
+
+.icon-fenxiang:before {
+    content: "\e604";
+}
+
+.icon-iconfonticonfonttianmaoyoujirenzheng2:before {
+    content: "\e605";
+}
+
+.icon-shenhe:before {
+    content: "\e606";
+}
+
+.icon-yifahuo:before {
+    content: "\e617";
+}
+
+.icon-jifen:before {
+    content: "\e607";
+}
+
+.icon-chang:before {
+    content: "\e620";
+}
+
+.icon-app:before {
+    content: "\e61c";
+}
+
+.icon-huandengpian:before {
+    content: "\e608";
+}
+
+.icon-yichang:before {
+    content: "\e609";
+}
+
+.icon-icon14:before {
+    content: "\e60a";
+}
+
+.icon-zhanghaoleixingguanli:before {
+    content: "\e60b";
+}
+
+.icon-chongzhi:before {
+    content: "\e60c";
+}
+
+.icon-yifahuo1:before {
+    content: "\e618";
+}
+
+.icon-shangpinguanli:before {
+    content: "\e61a";
+}
+
+.icon-flag:before {
+    content: "\e60d";
+}
+
+.icon-zhengguiicon40:before {
+    content: "\e61b";
+}
+
+.icon-jiayouzhan:before {
+    content: "\e60e";
+}
+
+.icon-guanggaoguanli:before {
+    content: "\e60f";
+}
+
+.icon-zixun:before {
+    content: "\e610";
+}
+
+.icon-guzhu:before {
+    content: "\e61e";
+}
+
+.icon-dingdanguanli:before {
+    content: "\e611";
+}
+
+.icon-liulanliang:before {
+    content: "\e619";
+}
+
+.icon-xinshouyindao:before {
+    content: "\e612";
+}
+
+.icon-qiyonguenable:before {
+    content: "\e613";
+}
+
+.icon-icon:before {
+    content: "\e614";
+}
+
+.icon-jia:before {
+    content: "\e61d";
+}
+
+.icon-icon12:before {
+    content: "\e615";
+}
 
 .notify {
     position: fixed;
@@ -189,9 +287,11 @@ hr {
 .am-table>tbody>tr>td {
     padding: 2.1rem .7rem;
 }
-.e-geo li{
+
+.e-geo li {
     padding-right: 5px;
 }
+
 .e-select-sm {
     padding: .6rem 1.5rem .6rem .6rem !important;
 }
@@ -202,7 +302,8 @@ hr {
 
 .e-tab {
     padding-left: 0;
-    border-bottom: 1px solid rgb(238, 238, 238);
+    /*border-bottom: 1px solid rgb(238, 238, 238);*/
+    margin: 0 20px -1px;
 }
 
 .e-tab li {
@@ -215,6 +316,7 @@ hr {
     padding: 7px 10px;
     color: #222;
     background-color: #eee;
+    border: 1px solid #eee;
     display: block;
     word-wrap: normal;
     text-overflow: ellipsis;
@@ -223,8 +325,15 @@ hr {
 }
 
 .e-tab li.active a {
-    background-color: #0e90d2;
+    /*background-color: #0e90d2;*/
+    background: #F39C12;
+    border: 1px solid #F39C12;
     color: #fff;
+}
+
+.e-tab-container {
+    border: 1px solid #eee;
+    margin: 0 20px;
 }
 
 .uploadify {
