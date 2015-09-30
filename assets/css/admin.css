@@ -17,19 +17,21 @@ ul {
 .admin-header {
     font-size: 1.4rem;
     margin-bottom: 0;
-    background: rgb(0, 134, 196);
+    background: #F39C12;
     color: #FFF;
 }
 
 .admin-logo {
     float: left;
 }
-.admin-logo .logo{
+
+.admin-logo .logo {
     float: left;
-    background: rgb(0, 112, 172);
+    background: rgba(0, 0, 0, 0.1);
     width: 60px;
     height: 50px
 }
+
 .admin-logo .admin-header-title {
     height: 50px;
     line-height: 50px;
@@ -52,7 +54,7 @@ ul {
 }
 
 .admin-header .admin-header-list {
-    border-left: 1px solid rgb(0, 112, 172);
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .admin-header .admin-header-list a {
@@ -61,16 +63,17 @@ ul {
 
 .admin-header .admin-header-list .admin-header-user a:focus,
 .admin-header .admin-header-list .admin-header-user a:hover {
-    background: rgb(0, 134, 196);
+    background: rgba(0, 0, 0, 0.1);
 }
 
 .admin-header .admin-header-list .admin-header-exit a:focus,
 .admin-header .admin-header-list .admin-header-exit a:hover {
-    background: rgb(0, 112, 172);
+    background: rgba(0, 0, 0, 0.1);
 }
 
 .admin-main {
-    background: #f3f3f3;
+    /*background: #f3f3f3;*/
+    overflow: hidden;
 }
 
 .admin-menu {
@@ -84,6 +87,7 @@ ul {
     width: 150px;
     min-height: 100%;
     float: left;
+    background: #F9FAFC;
     border-right: 1px solid #cecece;
 }
 
@@ -91,9 +95,14 @@ ul {
     margin-bottom: 0;
 }
 
+.admin-sidebar-list li {
+    border: none;
+    border-top: 1px solid #EEE
+}
+
 .admin-sidebar-list li a {
-    background: rgb(219, 224, 229);
-    color: #5c5c5c;
+    background: #F9FAFC;
+    color: #5C5C5C;
     padding-left: 24px;
 }
 
@@ -101,9 +110,9 @@ ul {
     background: #fff;
     padding-left: 35px;
 }
-
-.admin-sidebar-list li li a.active {
-    color: rgb(0, 134, 196);
+.admin-sidebar-list li a.active {
+    /*color: rgb(0, 134, 196);*/
+    color: #F39C12;
 }
 
 .admin-sidebar-list li:first-child {
