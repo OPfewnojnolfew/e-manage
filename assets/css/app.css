@@ -18,6 +18,10 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.iconfont-xs {
+    font-size: 12px;
+}
+
 .icon-gouwuche:before {
     content: "\e616";
 }

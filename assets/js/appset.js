@@ -74,23 +74,15 @@ $(function() {
         var $this = $(this),
             $li = $this.closest('li'),
             id = $li.attr('data-id'),
-            type,
-            typename;
-        if ($li.attr('data-type') === ADTYPE.UP) {
-            type = ADTYPE.DOWN;
-            typename = '下架';
-        } else {
-            type = ADTYPE.UP;
-            typename = '上架';
-        }
+            type = $this.attr('data-type');
         $.post('', {
             id: id,
             type: type
         }, function(res) {
             if (res.err_code == 0) {
-                $(this).text(typename);
                 $li.attr('data-type', type);
-                notify.success(typename + '成功');
+                $this.addClass('am-hide').siblings('.ad-uploadify-type').removeClass('am-hide');
+                notify.success((type === ADTYPE.DOWN ? '下架' : '上架') + '成功');
             } else {
                 notify.warn(res.err_msg);
             }
