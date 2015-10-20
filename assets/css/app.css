@@ -46,6 +46,10 @@
     content: "\e603";
 }
 
+.icon-jian:before {
+    content: "\e623";
+}
+
 .icon-fenxiang:before {
     content: "\e604";
 }
@@ -154,12 +158,21 @@
     content: "\e615";
 }
 
-.notify-container{
+.icon-icon3:before {
+    content: "\e621";
+}
+
+.icon-icon31:before {
+    content: "\e622";
+}
+
+.notify-container {
     position: fixed;
     left: 50%;
     z-index: 9999;
     top: 0;
 }
+
 .notify {
     position: relative;
     margin: 0 auto;
