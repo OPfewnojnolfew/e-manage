@@ -1,59 +1,60 @@
+var defaultOptions = {};
 var CashbackCouponSet = function($container, options) {
     this.MIN = 5;
     this.$container = $container;
     this.options = $.extend({}, defaultOptions, options);
     this._init();
 };
-CashbackSet.prototype = {
+CashbackCouponSet.prototype = {
     _init: function() {
-        var setObj = this.options.setObj;
-        var $items = $item = $('<div></div>'),
-            $contentContainer = $('<div></div>'),
-            $operateContainer = $('<div></div>');
-        $item.append($contentContainer).append($operateContainer);
-        for (var i = 0, len = setObj.length; i < len; i++) {
-            $items.append(this._createCashbackCouponItem(), i, len);
-            // $contentContainer.html(this._createCashbackItemContent());
-            // if (i === len - 1) {
-            //     var $plus = $('<a href="javascript:void(0)" class="sms-plus iconfont">&#xe603;</a>');
-            //     $operateContainer.html($plus);
-            // } else {
-            //     var $reduce = $('<a href="javascript:void(0)" class="sms-reduce iconfont">&#xe604;</a>');
-            //     $operateContainer.html($reduce);
-            // }
-            // $items.append($item);
-        }
+        this._createCashbackCoupon();
     },
-    _createCashbackCoupon: function($container) {
-        var setObj = this.options.setObj;
-        var $items = $item = $('<div></div>'),
-            $contentContainer = $('<div></div>'),
-            $operateContainer = $('<div></div>');
-        $item.append($contentContainer).append($operateContainer);
+    _createCashbackCoupon: function() {
+        var setObj = this._getCashbackCouponObj();
+        var $items = $('<div></div>'),
+            $item = $('<div></div>'),
+            $contentContainer,
+            $operateContainer;
         for (var i = 0, len = setObj.length; i < len; i++) {
-            $contentContainer.append(this._createCashbackItemContent(index));
+            $contentContainer = $('<div></div>');
+            $operateContainer = $('<div></div>');
+            $contentContainer.append(this._createCashbackCouponItem(i));
             if (i === len - 1) {
-                var $plus = $('<a href="javascript:void(0)" class="sms-plus iconfont">&#xe603;</a>');
-                $operateContainer.html($plus);
+                $operateContainer.html($('<a href="javascript:void(0)" class="cbco-plus iconfont">+</a>'));
             } else {
-                var $reduce = $('<a href="javascript:void(0)" class="sms-reduce iconfont">&#xe604;</a>');
-                $operateContainer.html($reduce);
+                $operateContainer.html($('<a href="javascript:void(0)" class="cbco-reduce iconfont">-</a>'));
             }
+            (function(index, self) {
+                $('.cbco-plus', $operateContainer).on('click', function() {
+                    self._addCashbackCouponItem();
+                });
+                $('.cbco-reduce', $operateContainer).on('click', function() {
+                    self._removeCashbackCouponItem(index);
+                });
+            })(i, this)
+            $item.append($contentContainer).append($operateContainer);
             $items.append($item);
         }
+        this.$container.html($items);
+    },
+    _bindEvent: function() {
+        $('input[type="text"]').on('keyup', function() {
+
+        })
     },
     _createCashbackCouponItem: function(index) {
-        var itemObj = this._getCashbackCouponItemObj(index);
-        var itemDom = (<div class="am-panel am-panel-default">
+        var cashbackCoupon = this._getCashbackCouponItemObj(index),
+            cashback = this._getCashbackItem(index);
+        var itemDom = `<div class="am-panel am-panel-default">
                 <div class="am-panel-bd">
                     <div>
-                        begin:<input type="text"/>
-                        end:<input type="text"/>
+                        begin:<input type="text" data-flag="${index}_begin" value="${cashbackCoupon.begin}"/>
+                        end:<input type="text" data-flag="${index}_end" value="${cashbackCoupon.end}"/>
                     </div>
                     <div>
                         <p></p>
                         <div>
-                            <input type="text"/>
+                            <input type="text" data-flag="${index}_1_credit" value="${cashback.credit}"/>
                             <select>
                                 <option></option>
                                 <option></option>
@@ -72,58 +73,69 @@ CashbackSet.prototype = {
                                 <th></th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="co-tbody-${index}">
                         </tbody>
                         </table>
                     </div>
                 </div>
-            </div>);
-        this._createCoupon(index, $container);
-
+            </div>`;
+        var $itemDom = $(itemDom);
+        this._createCoupon(index, $('tbody', $itemDom));
+        return $itemDom;
     },
     _createCoupon: function(index, $container) {
         $container.html('');
-        var coupons = _getCashbackCouponItemCoupon(index),
+        var coupons = this._getCouponItem(index),
             i = 0,
             length = coupons.length,
             coupon,
-            $tr = $('<tr></tr>');
+            $tr;
         for (; i < length; i++) {
+            $tr = $('<tr></tr>');
             coupon = coupons[i];
-            $tr.append($('<td><input type="text" class="J_coupon_Name ccs_' + index + '_' + i + '_name" value="' + coupon.name + '"/></td>'));
-            $tr.append($('<td><input type="text" class="J_coupon_Denomination ccs_' + index + '_' + i + '_denomination" value="' + coupon.denomination + '"/></td>'));
-            $tr.append($('<td><input type="text" class="J_coupon_Limit ccs_' + index + '_' + i + '_limit" value="' + coupon.limit + '"/></td>'));
-            $tr.append($('<td><input type="text" class="J_coupon_Expires ccs_' + index + '_' + i + '_expires" value="' + coupon.expires + '"/></td>'));
-            $tr.append($('<td><input type="text" class="J_coupon_Amount ccs_' + index + '_' + i + '_amount" value="' + coupon.amount + '"/></td>'));
-            $tr.append($('<td><input type="text" class="J_coupon_Gastations ccs_' + index + '_' + i + '_gastations" value="' + coupon.gastations + '"/></td>'));
-            if (i === len - 1) {
-                $tr.append($('<td><a href="javascript:void(0)" class="sms-plus iconfont">&#xe603;</a></td>'));
+            $tr.append($('<td><input type="text" class="J_coupon_Name co_' + index + '_' + i + '_name" value="' + coupon.name + '"/></td>'));
+            $tr.append($('<td><input type="text" class="J_coupon_Denomination co_' + index + '_' + i + '_denomination" value="' + coupon.denomination + '"/></td>'));
+            $tr.append($('<td><input type="text" class="J_coupon_Limit co_' + index + '_' + i + '_limit" value="' + coupon.limit + '"/></td>'));
+            $tr.append($('<td><input type="text" class="J_coupon_Expires co_' + index + '_' + i + '_expires" value="' + coupon.expires + '"/></td>'));
+            $tr.append($('<td><input type="text" class="J_coupon_Amount co_' + index + '_' + i + '_amount" value="' + coupon.amount + '"/></td>'));
+            $tr.append($('<td><input type="text" class="J_coupon_Gastations co_' + index + '_' + i + '_gastations" value="' + coupon.gastations + '"/></td>'));
+            if (i === length - 1) {
+                $tr.append($('<td><a href="javascript:void(0)" class="co-coupon-plus iconfont">+</a></td>'));
             } else {
-                $tr.append($('<td><a href="javascript:void(0)" class="sms-reduce iconfont">&#xe604;</a></td>'));
+                $tr.append($('<td><a href="javascript:void(0)" class="co-coupon-reduce iconfont">-</a></td>'));
             }
+            (function(index, i, $tr, self) {
+                $('.co-coupon-plus', $tr).on('click', function() {
+                    self._addCouponItem(index);
+                });
+                $('.co-coupon-reduce', $tr).on('click', function() {
+                    self._removeCouponItem(index, i);
+                });
+            })(index, i, $tr, this);
             $container.append($tr);
         }
     },
-    _getCashbackCouponItemObj: function(index) {
-        if (this.options.setObj && index < this.options.setObj.length) {
-            return this.options.setObj[index];
-        }
-        return this.options.setObj = {
+    _getCashbackCouponObj: function() {
+        return this.options.setObj || (this.options.setObj = [{
             begin: '',
             end: '',
             type: ''
-        };
+        }]);
     },
-    _getCashbackItem: function() {
-        var itemObj = this._getCashbackCouponItemObj();
-        !itemObj.cashback || (itemObj.cashback = {
+    _getCashbackCouponItemObj: function(index) {
+        var cashbackCouponObj = this._getCashbackCouponObj();
+        return cashbackCouponObj[index];
+    },
+    _getCashbackItem: function(index) {
+        var itemObj = this._getCashbackCouponItemObj(index);
+        return itemObj.cashback || (itemObj.cashback = {
             type: '',
             credit: ''
         });
     },
-    _getCouponItem: function() {
-        var itemObj = this._getCashbackCouponItemObj();
-        !itemObj.coupons || (itemObj.coupons = [{
+    _getCouponItem: function(index) {
+        var itemObj = this._getCashbackCouponItemObj(index);
+        return itemObj.coupons || (itemObj.coupons = [{
             name: '',
             denomination: '',
             limit: '',
@@ -131,5 +143,35 @@ CashbackSet.prototype = {
             amount: '',
             gastations: ''
         }]);
+    },
+    _addCashbackCouponItem: function() {
+        this.options.setObj.push({
+            begin: '',
+            end: '',
+            type: ''
+        });
+        this._createCashbackCoupon();
+    },
+    _removeCashbackCouponItem: function(index) {
+        this.options.setObj.splice(index, 1);
+        this._createCashbackCoupon();
+    },
+    _addCouponItem: function(index) {
+        var coupons = this._getCouponItem(index);
+        coupons.push({
+            name: '',
+            denomination: '',
+            limit: '',
+            expires: '',
+            amount: '',
+            gastations: ''
+        });
+        this._createCoupon(index, $('.co-tbody-' + index));
+    },
+    _removeCouponItem: function(index, i) {
+        var coupons = this._getCouponItem(index);
+        coupons.splice(i, 1);
+        this._createCoupon(index, $('.co-tbody-' + index));
     }
 };
+new CashbackCouponSet($('.container'))
