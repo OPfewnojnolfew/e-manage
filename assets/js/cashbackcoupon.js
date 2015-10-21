@@ -42,17 +42,8 @@ CashbackCouponSet.prototype = {
             } else {
                 $operateContainer.html($('<a href="javascript:void(0)" data-flag="${i}_2" class="J_plusreduce iconfont">&#xe623;</a>'));
             }
-            // (function(index, self) {
-            //     $('.cbco-plus', $operateContainer).on('click', function() {
-            //         self._addCashbackCouponItem();
-            //     });
-            //     $('.cbco-reduce', $operateContainer).on('click', function() {
-            //         self._removeCashbackCouponItem(index);
-            //     });
-            // })(i, this)
             $item.append($contentContainer).append($operateContainer);
             this.$container.append($item);
-            // $items.append($item);
         }
     },
     _bindEvent: function _bindEvent() {
@@ -127,25 +118,11 @@ CashbackCouponSet.prototype = {
             $tds = $('<td><input type="text" data-flag="' + index + '_' + TYPE.COUPON + '_' + i + '_name" value="' + coupon.name + '"/></td>\n            <td><input type="text" data-flag="' + index + '_' + TYPE.COUPON + '_' + i + '_denomination" value="' + coupon.denomination + '"/></td>\n            <td><input type="text" data-flag="' + index + '_' + TYPE.COUPON + '_' + i + '_limit" value="' + coupon.limit + '"/></td>\n            <td><input type="text" data-flag="' + index + '_' + TYPE.COUPON + '_' + i + '_expires" value="' + coupon.expires + '"/></td>\n            <td><input type="text" data-flag="' + index + '_' + TYPE.COUPON + '_' + i + '_amount" value="' + coupon.amount + '"/></td>\n            <td><select class="J_gastation_select" data-flag="' + index + '_' + TYPE.COUPON + '_' + i + '_gastations"/></td>\n            ');
             this._createGastations($('select', $tds), coupon.gastations);
             $tr.append($tds);
-            // $tr.append($('<td><input type="text" class="J_coupon_Name co_' + index + '_' + i + '_name" value="' + coupon.name + '"/></td>'));
-            // $tr.append($('<td><input type="text" class="J_coupon_Denomination co_' + index + '_' + i + '_denomination" value="' + coupon.denomination + '"/></td>'));
-            // $tr.append($('<td><input type="text" class="J_coupon_Limit co_' + index + '_' + i + '_limit" value="' + coupon.limit + '"/></td>'));
-            // $tr.append($('<td><input type="text" class="J_coupon_Expires co_' + index + '_' + i + '_expires" value="' + coupon.expires + '"/></td>'));
-            // $tr.append($('<td><input type="text" class="J_coupon_Amount co_' + index + '_' + i + '_amount" value="' + coupon.amount + '"/></td>'));
-            // $tr.append($('<td><input type="text" class="J_coupon_Gastations co_' + index + '_' + i + '_gastations" value="' + coupon.gastations + '"/></td>'));
             if (i === length - 1) {
                 $tr.append($('<td><a href="javascript:void(0)" data-flag="' + index + '_' + i + '_1" class="J_plusreduce iconfont">&#xe61d;</a></td>'));
             } else {
                 $tr.append($('<td><a href="javascript:void(0)" data-flag="' + index + '_' + i + '_2" class="J_plusreduce iconfont">&#xe623;</a></td>'));
             }
-            // (function(index, i, $tr, self) {
-            //     $('.co-coupon-plus', $tr).on('click', function() {
-            //         self._addCouponItem(index);
-            //     });
-            //     $('.co-coupon-reduce', $tr).on('click', function() {
-            //         self._removeCouponItem(index, i);
-            //     });
-            // })(index, i, $tr, this);
             $container.append($tr);
         }
     },

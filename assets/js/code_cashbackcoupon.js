@@ -40,17 +40,8 @@ CashbackCouponSet.prototype = {
             } else {
                 $operateContainer.html($('<a href="javascript:void(0)" data-flag="${i}_2" class="J_plusreduce iconfont">&#xe623;</a>'));
             }
-            // (function(index, self) {
-            //     $('.cbco-plus', $operateContainer).on('click', function() {
-            //         self._addCashbackCouponItem();
-            //     });
-            //     $('.cbco-reduce', $operateContainer).on('click', function() {
-            //         self._removeCashbackCouponItem(index);
-            //     });
-            // })(i, this)
             $item.append($contentContainer).append($operateContainer);
             this.$container.append($item);
-            // $items.append($item);
         }
 
     },
@@ -173,14 +164,6 @@ CashbackCouponSet.prototype = {
             } else {
                 $tr.append($(`<td><a href="javascript:void(0)" data-flag="${index}_${i}_2" class="J_plusreduce iconfont">&#xe623;</a></td>`));
             }
-            // (function(index, i, $tr, self) {
-            //     $('.co-coupon-plus', $tr).on('click', function() {
-            //         self._addCouponItem(index);
-            //     });
-            //     $('.co-coupon-reduce', $tr).on('click', function() {
-            //         self._removeCouponItem(index, i);
-            //     });
-            // })(index, i, $tr, this);
             $container.append($tr);
         }
     },
