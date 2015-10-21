@@ -18,6 +18,14 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.iconfont-30 {
+    font-size: 30px;
+}
+
+.iconfont-lg {
+    font-size: 16px;
+}
+
 .iconfont-xs {
     font-size: 12px;
 }
@@ -462,4 +470,31 @@ hr {
 .e-countdown a {
     color: #b47227;
     margin: 0 3px;
+}
+
+.ccs-item input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    width: 130px;
+}
+
+.ccs-item .ccs-body select {
+    display: inline-block;
+    width: auto;
+    padding: 5px 13px;
+}
+
+.ccs-item .ccs-head label {
+    margin: 0 5px;
+}
+
+.ccs-item .ccs-body td {
+    padding: 0.7rem;
+}
+.ccs-item .ccs-body th.secondlast{
+    min-width: 65px;
+}
+.ccs-item .ccs-body td input[type="text"] {
+    width: 100%;
 }

@@ -25,20 +25,19 @@ CashbackCouponSet.prototype = {
     },
     _createCashbackCoupon: function() {
         var setObj = this._getCashbackCouponObj();
-        var $items = $('<div class="am-g"></div>'),
-            $item,
+        var $item,
             $contentContainer,
             $operateContainer;
         this.$container.html('');
         for (var i = 0, len = setObj.length; i < len; i++) {
-            $item = $('<div class="am-g"></div>');
+            $item = $('<div class="am-g ccs-item"></div>');
             $contentContainer = $('<div class="am-u-md-11"></div>');
             $operateContainer = $('<div class="am-u-md-1"></div>');
             $contentContainer.html(this._createCashbackCouponItem(i));
             if (i === len - 1) {
-                $operateContainer.html($('<a href="javascript:void(0)" data-flag="${i}_1" class="J_plusreduce iconfont">&#xe61d;</a>'));
+                $operateContainer.html($('<a href="javascript:void(0)" data-flag="${i}_1" class="J_plusreduce iconfont iconfont-30">&#xe61d;</a>'));
             } else {
-                $operateContainer.html($('<a href="javascript:void(0)" data-flag="${i}_2" class="J_plusreduce iconfont">&#xe623;</a>'));
+                $operateContainer.html($('<a href="javascript:void(0)" data-flag="${i}_2" class="J_plusreduce iconfont iconfont-30">&#xe623;</a>'));
             }
             $item.append($contentContainer).append($operateContainer);
             this.$container.append($item);
@@ -100,14 +99,14 @@ CashbackCouponSet.prototype = {
         var cashbackCoupon = this._getCashbackCouponItemObj(index),
             cashback = this._getCashbackItem(index);
         var itemDom = `<div class="am-panel am-panel-default">
-                <div class="am-panel-bd">
-                    <div>
-                        开始:<input type="text" data-flag="${index}_begin" value="${cashbackCoupon.begin}"/>
-                        结束:<input type="text" data-flag="${index}_end" value="${cashbackCoupon.end}"/>
-                    </div>
-                    <div>
-                        <p><input type="checkbox" class="J_type" ${(','+cashbackCoupon.type+',').indexOf(','+TYPE.CASHBACK+',')>-1?'checked':''}  data-flag="${index}_type" value="${TYPE.CASHBACK}"/>返现金：</p>
-                        <div>
+                <div class="am-panel-hd ccs-head">
+                    <label>开始：</label><input type="text" data-flag="${index}_begin" value="${cashbackCoupon.begin}"/>
+                    <label>结束：</label><input type="text" data-flag="${index}_end" value="${cashbackCoupon.end}"/>
+                </div>
+                <div class="am-panel-bd ccs-body">
+                    <div class="am-margin-bottom">
+                        <div class="am-checkbox"><label><input type="checkbox" class="J_type" ${(','+cashbackCoupon.type+',').indexOf(','+TYPE.CASHBACK+',')>-1?'checked':''}  data-flag="${index}_type" value="${TYPE.CASHBACK}"/>返现金</label></div>
+                        <div class="am-margin-left am-form">
                             <input type="text" data-flag="${index}_${TYPE.CASHBACK}_credit" value="${cashback.credit}"/>
                             <select class="J_cashbacktype_select" data-flag="${index}_${TYPE.CASHBACK}_type">
                                 <option value="${CASHBACKTYPE[0].KEY}" ${cashback.type==CASHBACKTYPE[0].KEY?'selected':''}>${CASHBACKTYPE[0].VALUE}</option>
@@ -115,9 +114,10 @@ CashbackCouponSet.prototype = {
                             </select>
                         </div>
                     </div>
-                    <div>
-                        <p><input type="checkbox" class="J_type"  ${(','+cashbackCoupon.type+',').indexOf(','+TYPE.COUPON+',')>-1?'checked':''} data-flag="${index}_type" value="${TYPE.COUPON}"/>返优惠劵：</p>
-                        <table>
+                    <div class="am-margin-bottom">
+                        <div class="am-checkbox"><label><input type="checkbox" class="J_type"  ${(','+cashbackCoupon.type+',').indexOf(','+TYPE.COUPON+',')>-1?'checked':''} data-flag="${index}_type" value="${TYPE.COUPON}"/>返优惠劵：</label></div>
+                        <div class="am-margin-left am-form">
+                        <table class="am-table">
                         <thead>
                             <tr>
                                 <th>名称</th>
@@ -125,13 +125,14 @@ CashbackCouponSet.prototype = {
                                 <th>限额</th>
                                 <th>期限</th>
                                 <th>数量</th>
-                                <th>加气站</th>
+                                <th class="secondlast">加气站</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody class="co-tbody-${index}">
                         </tbody>
                         </table>
+                        </div>
                     </div>
                 </div>
             </div>`;
@@ -160,9 +161,9 @@ CashbackCouponSet.prototype = {
             this._createGastations($('select', $tds), coupon.gastations);
             $tr.append($tds);
             if (i === length - 1) {
-                $tr.append($(`<td><a href="javascript:void(0)" data-flag="${index}_${i}_1" class="J_plusreduce iconfont">&#xe61d;</a></td>`));
+                $tr.append($(`<td><a href="javascript:void(0)" data-flag="${index}_${i}_1" class="J_plusreduce iconfont iconfont-lg">&#xe61d;</a></td>`));
             } else {
-                $tr.append($(`<td><a href="javascript:void(0)" data-flag="${index}_${i}_2" class="J_plusreduce iconfont">&#xe623;</a></td>`));
+                $tr.append($(`<td><a href="javascript:void(0)" data-flag="${index}_${i}_2" class="J_plusreduce iconfont iconfont-lg">&#xe623;</a></td>`));
             }
             $container.append($tr);
         }
