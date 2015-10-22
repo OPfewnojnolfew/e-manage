@@ -56,7 +56,6 @@ CashbackCouponSet.prototype = {
                 } else if (flag.length === 4) {
                     self._getCouponItem(flag[0])[flag[2]][flag[3]] = $target.val();
                 }
-                console.log(self._getCashbackCouponObj());
             }
         });
         this.$container.on('change', function (e) {
@@ -76,7 +75,6 @@ CashbackCouponSet.prototype = {
                 if ($target.is('.J_cashbacktype_select')) {
                     self._getCashbackItem(flag[0])[flag[2]] = $target.val();
                 }
-                console.log(self._getCashbackCouponObj());
             }
         });
         this.$container.on('click', function (e) {
@@ -212,6 +210,32 @@ CashbackCouponSet.prototype = {
         var coupons = this._getCouponItem(index);
         coupons.splice(i, 1);
         this._createCoupon(index, $('.co-tbody-' + index));
+    },
+    get: function get() {
+        var setObj = this._getCashbackCouponObj(),
+            length = setObj.length;
+        if (length < 2) {
+            notify.warn('需要两个及以上区域');
+            return false;
+        }
+        for (var i = 0, item, begin, end; i < length; i++) {
+            item = setObj[i];
+            begin = +item.begin;
+            end = +item.end;
+            if (isNaN(begin) || isNaN(begin)) {
+                notify.warn('开始金额和结束金额必须为数字');
+                return false;
+            }
+            if (end < begin) {
+                notify.warn('结束金额必须大于开始金额');
+                return false;
+            }
+            if (i > 0 && begin != setObj[i - 1].end) {
+                notify.warn('开始金额必须和上区域的结束金额相等');
+                return false;
+            }
+        }
+        return setObj;
     }
 };
-new CashbackCouponSet($('.J_container'));
+window.cashback = new CashbackCouponSet($('.J_container'));
