@@ -12,7 +12,8 @@ var CASHBACKTYPE = [{
     VALUE: '比率（%）'
 }];
 var defaultOptions = {
-    gastationsUrl: 'assets/js/test.json'
+    gastationsUrl: '',
+    saveUrl: ''
 };
 var CashbackCouponSet = function CashbackCouponSet($container, options) {
     this.MIN = 5;
@@ -42,6 +43,7 @@ CashbackCouponSet.prototype = {
             $item.append($contentContainer).append($operateContainer);
             this.$container.append($item);
         }
+        this.$container.append('<a class="J_save am-btn am-btn-primary am-margin-left">保存</a>');
     },
     _bindEvent: function _bindEvent() {
         var self = this;
@@ -64,7 +66,7 @@ CashbackCouponSet.prototype = {
             if (flag && (flag = flag.split('_')) && flag.length) {
                 if ($target.is('.J_type')) {
                     var checkeds = [];
-                    $('.J_type:checked', self.$container).each(function () {
+                    $('.J_type[data-flag="' + flag.join('_') + '"]:checked', self.$container).each(function () {
                         checkeds.push($(this).val());
                     });
                     self._getCashbackCouponItemObj(flag[0])[flag[1]] = checkeds.join(',');
@@ -89,12 +91,25 @@ CashbackCouponSet.prototype = {
                     }
                 }
             }
+            if ($target.hasClass('J_save')) {
+                var setObj = self.get();
+                console.log(setObj);
+                setObj && $.get(self.options.saveUrl, {
+                    setObj: JSON.stringify(setObj)
+                }, function (res) {
+                    if (res.err_code == 0) {
+                        notify.success('保存成功');
+                    } else {
+                        notify.error('保存失败');
+                    }
+                });
+            }
         });
     },
     _createCashbackCouponItem: function _createCashbackCouponItem(index) {
         var cashbackCoupon = this._getCashbackCouponItemObj(index),
             cashback = this._getCashbackItem(index);
-        var itemDom = '<div class="am-panel am-panel-default">\n                <div class="am-panel-hd ccs-head">\n                    <label>开始：</label><input type="text" data-flag="' + index + '_begin" value="' + cashbackCoupon.begin + '"/>\n                    <label>结束：</label><input type="text" data-flag="' + index + '_end" value="' + cashbackCoupon.end + '"/>\n                </div>\n                <div class="am-panel-bd ccs-body">\n                    <div class="am-margin-bottom">\n                        <div class="am-checkbox"><label><input type="checkbox" class="J_type" ' + ((',' + cashbackCoupon.type + ',').indexOf(',' + TYPE.CASHBACK + ',') > -1 ? 'checked' : '') + '  data-flag="' + index + '_type" value="' + TYPE.CASHBACK + '"/>返现金</label></div>\n                        <div class="am-margin-left am-form">\n                            <input type="text" data-flag="' + index + '_' + TYPE.CASHBACK + '_credit" value="' + cashback.credit + '"/>\n                            <select class="J_cashbacktype_select" data-flag="' + index + '_' + TYPE.CASHBACK + '_type">\n                                <option value="' + CASHBACKTYPE[0].KEY + '" ' + (cashback.type == CASHBACKTYPE[0].KEY ? 'selected' : '') + '>' + CASHBACKTYPE[0].VALUE + '</option>\n                                <option value="' + CASHBACKTYPE[1].KEY + '" ' + (cashback.type == CASHBACKTYPE[1].KEY ? 'selected' : '') + '>' + CASHBACKTYPE[1].VALUE + '</option>\n                            </select>\n                        </div>\n                    </div>\n                    <div class="am-margin-bottom">\n                        <div class="am-checkbox"><label><input type="checkbox" class="J_type"  ' + ((',' + cashbackCoupon.type + ',').indexOf(',' + TYPE.COUPON + ',') > -1 ? 'checked' : '') + ' data-flag="' + index + '_type" value="' + TYPE.COUPON + '"/>返优惠劵：</label></div>\n                        <div class="am-margin-left am-form">\n                        <table class="am-table">\n                        <thead>\n                            <tr>\n                                <th>名称</th>\n                                <th>额度</th>\n                                <th>限额</th>\n                                <th>期限</th>\n                                <th>数量</th>\n                                <th class="secondlast">加气站</th>\n                                <th></th>\n                            </tr>\n                        </thead>\n                        <tbody class="co-tbody-' + index + '">\n                        </tbody>\n                        </table>\n                        </div>\n                    </div>\n                </div>\n            </div>';
+        var itemDom = '<div class="am-panel am-panel-default">\n                <div class="am-panel-hd ccs-head">\n                    <label>开始：</label><input type="text" data-flag="' + index + '_begin" value="' + cashbackCoupon.begin + '"/>\n                    <label>结束：</label><input type="text" data-flag="' + index + '_end" value="' + cashbackCoupon.end + '"/>\n                </div>\n                <div class="am-panel-bd ccs-body">\n                    <div class="am-margin-bottom">\n                        <div class="am-checkbox"><label><input type="checkbox" class="J_type" ' + ((',' + cashbackCoupon.type + ',').indexOf(',' + TYPE.CASHBACK + ',') > -1 ? 'checked' : '') + '  data-flag="' + index + '_type" value="' + TYPE.CASHBACK + '"/>返现金</label></div>\n                        <div class="am-margin-left am-form">\n                            <input type="text" data-flag="' + index + '_' + TYPE.CASHBACK + '_credit" value="' + cashback.credit + '"/>\n                            <select class="J_cashbacktype_select" data-flag="' + index + '_' + TYPE.CASHBACK + '_type">\n                                <option value="' + CASHBACKTYPE[0].KEY + '" ' + (cashback.type == CASHBACKTYPE[0].KEY ? 'selected' : '') + '>' + CASHBACKTYPE[0].VALUE + '</option>\n                                <option value="' + CASHBACKTYPE[1].KEY + '" ' + (cashback.type == CASHBACKTYPE[1].KEY ? 'selected' : '') + '>' + CASHBACKTYPE[1].VALUE + '</option>\n                            </select>\n                        </div>\n                    </div>\n                    <div class="am-margin-bottom">\n                        <div class="am-checkbox"><label><input type="checkbox" class="J_type"  ' + ((',' + cashbackCoupon.type + ',').indexOf(',' + TYPE.COUPON + ',') > -1 ? 'checked' : '') + ' data-flag="' + index + '_type" value="' + TYPE.COUPON + '"/>返优惠劵</label></div>\n                        <div class="am-margin-left am-form">\n                        <table class="am-table">\n                        <thead>\n                            <tr>\n                                <th>名称</th>\n                                <th>额度</th>\n                                <th>限额</th>\n                                <th>期限</th>\n                                <th>数量</th>\n                                <th class="secondlast">加气站</th>\n                                <th></th>\n                            </tr>\n                        </thead>\n                        <tbody class="co-tbody-' + index + '">\n                        </tbody>\n                        </table>\n                        </div>\n                    </div>\n                </div>\n            </div>';
         var $itemDom = $(itemDom);
         this._createCoupon(index, $('tbody', $itemDom));
         return $itemDom;
@@ -238,4 +253,20 @@ CashbackCouponSet.prototype = {
         return setObj;
     }
 };
-window.cashback = new CashbackCouponSet($('.J_container'));
+$(function () {
+    //测试
+    var cashback = new CashbackCouponSet($('.J_container'), {
+        setObj: '',
+        gastationsUrl: '',
+        saveUrl: ''
+    });
+    $.get('', function (res) {
+        if (res.err_code == 0) {
+            var cashback = new CashbackCouponSet($('.J_container'), {
+                setObj: res.data,
+                gastationsUrl: '',
+                saveUrl: ''
+            });
+        }
+    });
+});

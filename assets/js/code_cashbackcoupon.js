@@ -10,7 +10,8 @@ var CASHBACKTYPE = [{
     VALUE: '比率（%）'
 }];
 var defaultOptions = {
-    gastationsUrl: 'assets/js/test.json',
+    gastationsUrl: '',
+    saveUrl: ''
 };
 var CashbackCouponSet = function($container, options) {
     this.MIN = 5;
@@ -42,7 +43,7 @@ CashbackCouponSet.prototype = {
             $item.append($contentContainer).append($operateContainer);
             this.$container.append($item);
         }
-
+        this.$container.append('<a class="J_save am-btn am-btn-primary am-margin-left">保存</a>');
     },
     _bindEvent: function() {
         var self = this;
@@ -65,7 +66,7 @@ CashbackCouponSet.prototype = {
             if (flag && (flag = flag.split('_')) && flag.length) {
                 if ($target.is('.J_type')) {
                     var checkeds = [];
-                    $('.J_type:checked', self.$container).each(function() {
+                    $('.J_type[data-flag="' + flag.join('_') + '"]:checked', self.$container).each(function() {
                         checkeds.push($(this).val());
                     });
                     self._getCashbackCouponItemObj(flag[0])[flag[1]] = checkeds.join(',');
@@ -90,6 +91,19 @@ CashbackCouponSet.prototype = {
                     }
                 }
             }
+            if ($target.hasClass('J_save')) {
+                var setObj = self.get();
+                console.log(setObj)
+                setObj && $.get(self.options.saveUrl, {
+                    setObj: JSON.stringify(setObj)
+                }, function(res) {
+                    if (res.err_code == 0) {
+                        notify.success('保存成功');
+                    } else {
+                        notify.error('保存失败');
+                    }
+                });
+            }
         });
     },
     _createCashbackCouponItem: function(index) {
@@ -112,7 +126,7 @@ CashbackCouponSet.prototype = {
                         </div>
                     </div>
                     <div class="am-margin-bottom">
-                        <div class="am-checkbox"><label><input type="checkbox" class="J_type"  ${(','+cashbackCoupon.type+',').indexOf(','+TYPE.COUPON+',')>-1?'checked':''} data-flag="${index}_type" value="${TYPE.COUPON}"/>返优惠劵：</label></div>
+                        <div class="am-checkbox"><label><input type="checkbox" class="J_type"  ${(','+cashbackCoupon.type+',').indexOf(','+TYPE.COUPON+',')>-1?'checked':''} data-flag="${index}_type" value="${TYPE.COUPON}"/>返优惠劵</label></div>
                         <div class="am-margin-left am-form">
                         <table class="am-table">
                         <thead>
@@ -280,4 +294,20 @@ CashbackCouponSet.prototype = {
         return setObj;
     }
 };
-window.cashback = new CashbackCouponSet($('.J_container'))
+$(function() {
+    //测试
+    var cashback = new CashbackCouponSet($('.J_container'), {
+        setObj: '',
+        gastationsUrl: '',
+        saveUrl: ''
+    });
+    $.get('', function(res) {
+        if (res.err_code == 0) {
+            var cashback = new CashbackCouponSet($('.J_container'), {
+                setObj: res.data,
+                gastationsUrl: '',
+                saveUrl: ''
+            });
+        }
+    });
+});
