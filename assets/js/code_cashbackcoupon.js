@@ -93,7 +93,6 @@ CashbackCouponSet.prototype = {
             }
             if ($target.hasClass('J_save')) {
                 var setObj = self.get();
-                console.log(setObj)
                 setObj && $.get(self.options.saveUrl, {
                     setObj: JSON.stringify(setObj)
                 }, function(res) {
