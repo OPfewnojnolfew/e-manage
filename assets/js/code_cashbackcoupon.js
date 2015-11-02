@@ -72,7 +72,9 @@ CashbackCouponSet.prototype = {
                     self._getCashbackCouponItemObj(flag[0])[flag[1]] = checkeds.join(',');
                 }
                 if ($target.is('.J_gastation_select')) {
-                    self._getCouponItem(flag[0])[flag[2]][flag[3]] = $target.val();
+                    var val = $target.val();
+                    val = val ? val.join(',') : '';
+                    self._getCouponItem(flag[0])[flag[2]][flag[3]] = val;
                 }
                 if ($target.is('.J_cashbacktype_select')) {
                     self._getCashbackItem(flag[0])[flag[2]] = $target.val();
@@ -151,6 +153,7 @@ CashbackCouponSet.prototype = {
         return $itemDom;
     },
     _createCoupon: function(index, $container) {
+        var self = this;
         $container.html('');
         var coupons = this._getCouponItem(index),
             i = 0,
@@ -164,10 +167,18 @@ CashbackCouponSet.prototype = {
             $tds = $(`<td><input type="text" data-flag="${index}_${TYPE.COUPON}_${i}_name" value="${coupon.name}"/></td>
             <td><input type="text" data-flag="${index}_${TYPE.COUPON}_${i}_denomination" value="${coupon.denomination}"/></td>
             <td><input type="text" data-flag="${index}_${TYPE.COUPON}_${i}_limit" value="${coupon.limit}"/></td>
-            <td><input type="text" data-flag="${index}_${TYPE.COUPON}_${i}_expires" value="${coupon.expires}"/></td>
+            <td><input type="text" class="J_expires" data-flag="${index}_${TYPE.COUPON}_${i}_expires" value="${coupon.expires}" readonly/></td>
             <td><input type="text" data-flag="${index}_${TYPE.COUPON}_${i}_amount" value="${coupon.amount}"/></td>
-            <td><select class="J_gastation_select" data-flag="${index}_${TYPE.COUPON}_${i}_gastations"/></td>
+            <td><select multiple class="J_gastation_select" data-flag="${index}_${TYPE.COUPON}_${i}_gastations"/></td>
             `);
+            $('.J_expires', $tds).datepicker({
+                format: 'yyyy-mm-dd',
+                autoClose: true
+            }).on('changeDate.datepicker.amui', function(event) {
+                var $this = $(this),
+                    flag = $this.attr('data-flag').split('_');
+                self._getCouponItem(flag[0])[flag[2]][flag[3]] = $this.val();
+            });
             this._createGastations($('select', $tds), coupon.gastations);
             $tr.append($tds);
             if (i === length - 1) {
@@ -185,9 +196,13 @@ CashbackCouponSet.prototype = {
                     len = result.length;
                 for (; i < len; i++) {
                     item = result[i];
-                    $option = $(`<option value="${item.key}" ${selectedValue==item.key?'selected':''}>${item.value}</option>`);
+                    $option = $(`<option value="${item.key}"  ${(','+selectedValue+',').indexOf(','+item.key+',')>-1?'selected':''}>${item.value}</option>`);
                     $container.append($option);
                 }
+                $container.selected({
+                    btnSize: 'sm',
+                    maxHeight: 60
+                });
             };
         if (this.gastationsObj) {
             afterAjax(this.gastationsObj);
@@ -197,7 +212,7 @@ CashbackCouponSet.prototype = {
             })
         } else {
             this.gasAjax = $.get(this.options.gastationsUrl).then(function(res) {
-                res = JSON.parse(res);
+                // res = JSON.parse(res);
                 var result = [];
                 if (res.err_code == 0 && res.data) {
                     result = res.data;
@@ -228,7 +243,7 @@ CashbackCouponSet.prototype = {
     },
     _getCouponItem: function(index) {
         var itemObj = this._getCashbackCouponItemObj(index);
-        return itemObj.coupons || (itemObj.coupons = [{
+        itemObj.coupons && itemObj.coupons.length || (itemObj.coupons = [{
             name: '',
             denomination: '',
             limit: '',
@@ -236,6 +251,7 @@ CashbackCouponSet.prototype = {
             amount: '',
             gastations: ''
         }]);
+        return itemObj.coupons;
     },
     _addCashbackCouponItem: function() {
         this.options.setObj.push({
@@ -294,18 +310,12 @@ CashbackCouponSet.prototype = {
     }
 };
 $(function() {
-    //测试
-    var cashback = new CashbackCouponSet($('.J_container'), {
-        setObj: '',
-        gastationsUrl: '',
-        saveUrl: ''
-    });
     $.get('', function(res) {
         if (res.err_code == 0) {
             var cashback = new CashbackCouponSet($('.J_container'), {
                 setObj: res.data,
-                gastationsUrl: '',
-                saveUrl: ''
+                gastationsUrl: gastationsUrl,
+                saveUrl: saveRuleUrl
             });
         }
     });
