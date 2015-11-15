@@ -30,49 +30,178 @@
     font-size: 12px;
 }
 
-.icon-wuliu:before { content: "\e627"; }
-.icon-gouwuche:before { content: "\e616"; }
-.icon-tingyong:before { content: "\e600"; }
-.icon-zhangben:before { content: "\e601"; }
-.icon-unie677:before { content: "\e602"; }
-.icon-11:before { content: "\e61f"; }
-.icon-e:before { content: "\e625"; }
-.icon-quanxian:before { content: "\e603"; }
-.icon-jian:before { content: "\e623"; }
-.icon-fenxiang:before { content: "\e604"; }
-.icon-icon18:before { content: "\e628"; }
-.icon-jin:before { content: "\e629"; }
-.icon-iconfonticonfonttianmaoyoujirenzheng2:before { content: "\e605"; }
-.icon-shenhe:before { content: "\e606"; }
-.icon-yifahuo:before { content: "\e617"; }
-.icon-jifen:before { content: "\e607"; }
-.icon-chang:before { content: "\e620"; }
-.icon-app:before { content: "\e61c"; }
-.icon-huandengpian:before { content: "\e608"; }
-.icon-yichang:before { content: "\e609"; }
-.icon-icon14:before { content: "\e60a"; }
-.icon-zhanghaoleixingguanli:before { content: "\e60b"; }
-.icon-dingdan:before { content: "\e626"; }
-.icon-chongzhi:before { content: "\e60c"; }
-.icon-yifahuo1:before { content: "\e618"; }
-.icon-shangpinguanli:before { content: "\e61a"; }
-.icon-flag:before { content: "\e60d"; }
-.icon-zhengguiicon40:before { content: "\e61b"; }
-.icon-jiayouzhan:before { content: "\e60e"; }
-.icon-guanggaoguanli:before { content: "\e60f"; }
-.icon-zixun:before { content: "\e610"; }
-.icon-guzhu:before { content: "\e61e"; }
-.icon-dingdanguanli:before { content: "\e611"; }
-.icon-liulanliang:before { content: "\e619"; }
-.icon-xinshouyindao:before { content: "\e612"; }
-.icon-qiyonguenable:before { content: "\e613"; }
-.icon-icon:before { content: "\e614"; }
-.icon-jia:before { content: "\e61d"; }
-.icon-zhifubaozhifu:before { content: "\e624"; }
-.icon-icon12:before { content: "\e615"; }
-.icon-icon3:before { content: "\e621"; }
-.icon-icon31:before { content: "\e622"; }
-.icon-zhou:before { content: "\e62a"; }
+.icon-wuliu:before {
+    content: "\e627";
+}
+
+.icon-gouwuche:before {
+    content: "\e616";
+}
+
+.icon-tingyong:before {
+    content: "\e600";
+}
+
+.icon-zhangben:before {
+    content: "\e601";
+}
+
+.icon-unie677:before {
+    content: "\e602";
+}
+
+.icon-11:before {
+    content: "\e61f";
+}
+
+.icon-e:before {
+    content: "\e625";
+}
+
+.icon-quanxian:before {
+    content: "\e603";
+}
+
+.icon-jian:before {
+    content: "\e623";
+}
+
+.icon-fenxiang:before {
+    content: "\e604";
+}
+
+.icon-icon18:before {
+    content: "\e628";
+}
+
+.icon-jin:before {
+    content: "\e629";
+}
+
+.icon-iconfonticonfonttianmaoyoujirenzheng2:before {
+    content: "\e605";
+}
+
+.icon-shenhe:before {
+    content: "\e606";
+}
+
+.icon-yifahuo:before {
+    content: "\e617";
+}
+
+.icon-jifen:before {
+    content: "\e607";
+}
+
+.icon-chang:before {
+    content: "\e620";
+}
+
+.icon-app:before {
+    content: "\e61c";
+}
+
+.icon-huandengpian:before {
+    content: "\e608";
+}
+
+.icon-yichang:before {
+    content: "\e609";
+}
+
+.icon-icon14:before {
+    content: "\e60a";
+}
+
+.icon-zhanghaoleixingguanli:before {
+    content: "\e60b";
+}
+
+.icon-dingdan:before {
+    content: "\e626";
+}
+
+.icon-chongzhi:before {
+    content: "\e60c";
+}
+
+.icon-yifahuo1:before {
+    content: "\e618";
+}
+
+.icon-shangpinguanli:before {
+    content: "\e61a";
+}
+
+.icon-flag:before {
+    content: "\e60d";
+}
+
+.icon-zhengguiicon40:before {
+    content: "\e61b";
+}
+
+.icon-jiayouzhan:before {
+    content: "\e60e";
+}
+
+.icon-guanggaoguanli:before {
+    content: "\e60f";
+}
+
+.icon-zixun:before {
+    content: "\e610";
+}
+
+.icon-guzhu:before {
+    content: "\e61e";
+}
+
+.icon-dingdanguanli:before {
+    content: "\e611";
+}
+
+.icon-liulanliang:before {
+    content: "\e619";
+}
+
+.icon-xinshouyindao:before {
+    content: "\e612";
+}
+
+.icon-qiyonguenable:before {
+    content: "\e613";
+}
+
+.icon-icon:before {
+    content: "\e614";
+}
+
+.icon-jia:before {
+    content: "\e61d";
+}
+
+.icon-zhifubaozhifu:before {
+    content: "\e624";
+}
+
+.icon-icon12:before {
+    content: "\e615";
+}
+
+.icon-icon3:before {
+    content: "\e621";
+}
+
+.icon-icon31:before {
+    content: "\e622";
+}
+
+.icon-zhou:before {
+    content: "\e62a";
+}
+
 .notify-container {
     position: fixed;
     left: 50%;
@@ -400,16 +529,95 @@ hr {
     width: 100%;
 }
 
-/*.e-content-list {
-    margin-top: 16px;
-}
-.e-content-list li{
-    padding-bottom: 10px;
-}
-.e-content-list li:nth-of-type(4n+1) {
-    border-left: none;
+.e-panel-hd>span {
+    margin-right: 10px
 }
 
-.e-content-list li:nth-of-type(4n) {
-    border-right: none;
-}*/
+.coupon-item {
+    margin: 20px;
+}
+
+.coupon-item.used {
+    color: #c5c5c5;
+}
+
+.coupon-item.expired {
+    color: #dfd9d8;
+}
+
+.coupon-item .coupon-item-body {
+    position: relative;
+    padding: 10px 20px;
+    background: #fff;
+    overflow: hidden;
+    border: 1px dashed #ccc;
+    border-bottom: none;
+}
+
+.coupon-item .coupon-item-body .coupon-icon {
+    position: absolute;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    top: 10px;
+    right: 10px;
+    background: url(../img/unused.png) no-repeat;
+}
+
+.coupon-item.unused .coupon-item-body .coupon-icon {
+    background: url(../img/unused.png) no-repeat;
+}
+
+.coupon-item.used .coupon-item-body .coupon-icon {
+    background: url(../img/used.png) no-repeat;
+}
+
+.coupon-item.expired .coupon-item-body .coupon-icon {
+    background: url(../img/expired.png) no-repeat;
+}
+
+.coupon-item .coupon-item-body>p {
+    float: left;
+    margin: 0;
+    color: #F39C12;
+}
+
+.coupon-item.unused .coupon-item-body>p {
+    color: #F39C12;
+}
+
+.coupon-item.used .coupon-item-body>p {
+    color: #c5c5c5;
+}
+
+.coupon-item.expired .coupon-item-body>p {
+    color: #dfd9d8;
+}
+
+.coupon-item .coupon-item-body>p span {
+    font-size: 50px;
+}
+
+.coupon-item .coupon-item-body>ul {
+    float: left;
+    margin-top: 15px;
+    list-style-type: disc;
+}
+
+.coupon-item .coupon-item-foot {
+    padding: 5px 10px;
+    color: #fff;
+    background: #F39C12;
+}
+
+.coupon-item.unused .coupon-item-foot {
+    background: #F39C12;
+}
+
+.coupon-item.used .coupon-item-foot {
+    background: #c5c5c5;
+}
+
+.coupon-item.expired .coupon-item-foot {
+    background: #dfd9d8;
+}
